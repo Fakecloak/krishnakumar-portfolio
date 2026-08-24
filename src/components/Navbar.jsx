@@ -74,9 +74,9 @@ export default function Navbar() {
             return (
               <a
                 key={href} 
-                href={href}
+                href={href} 
                 onClick={(e) => handleNavClick(e, href)}
-                className={`font-sans font-medium text-[18px] leading-none transition-colors ${
+                className={`font-sans font-medium text-[20px] leading-none transition-colors ${
                   isActive
                     ? 'text-white underline underline-offset-6 '
                     : 'text-white/70 hover:text-white no-underline'

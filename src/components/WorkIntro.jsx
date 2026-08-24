@@ -28,7 +28,7 @@ export default function WorkIntro() {
           Product Works
         </div>
         
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[62px] font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-[1.02]">
+        <h2 className="font-['Darker_Grotesque'] font-bold text-[36px] sm:text-[44px] md:text-[56px] leading-none tracking-normal text-center">
           From product thinking to polished interfaces
         </h2>
       </div>
