@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    font-family: 'Darker Grotesque', sans-serif;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    /* Figma base: deep dark #08090f — NOT pure black */
+    background-color: #000000;
+    color: #ffffff;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  #root {
+    min-height: 100vh;
+    background-color: #000000;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08090f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a1b26;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2b38;
+}
+
+/* Selection */
+::selection {
+  background: rgba(56, 130, 255, 0.25);
+  color: #ffffff;
+}
+
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
