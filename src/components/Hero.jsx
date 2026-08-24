@@ -36,31 +36,34 @@ export default function Hero() {
               with clarity and purpose
             </h1>
 
-            <p className="w-[648px] max-w-full font-['Darker_Grotesque'] font-normal text-[24px] leading-[130%] tracking-[0%] mt-5 text-zinc-300">
+            <p className="w-[648px] max-w-full font-['Darker_Grotesque'] font-normal text-[24px] leading-[130%] tracking-[0%] mt-5">
               From early product thinking to polished interfaces, I create clear and purposeful digital experiences.
             </p>
 
             {/* 3 Boxed Metadata Tags */} 
-            <div className="mt-7 flex flex-wrap items-center gap-3">
-              <span className="p-[8px] border border-white/20 leading-[1] text-zinc-300 text-base font-normal tracking-wide rounded-[3px]">
+            <div className="mt-7 flex flex-wrap items-center gap-[12px]">
+              <span className="flex h-[27px] w-[131px] items-center justify-center border-[0.5px] border-white font-['Darker_Grotesque'] text-[20px] font-normal leading-none tracking-normal">
                 Product Design
               </span>
-              <span className="p-[8px] border border-white/20 leading-[1] text-zinc-300 text-base font-normal tracking-wide rounded-[3px]">
+
+              <span className="flex h-[27px] w-[131px] items-center justify-center border-[0.5px] border-white font-['Darker_Grotesque'] text-[20px] font-normal leading-none tracking-normal">
                 UI / UX Design
               </span>
-              <span className="p-[8px] border border-white/20 leading-[1] text-zinc-300 text-base font-normal tracking-wide rounded-[3px]">
+
+              <span className="flex h-[27px] w-[131px] items-center justify-center border-[0.5px] border-white font-['Darker_Grotesque'] text-[20px] font-normal leading-none tracking-normal">
                 Design Systems
               </span>
             </div>
+            
           </div>
 
           {/* Right Column: 'Portfolio' anchored */}
           <div className="lg:col-span-5 flex flex-col lg:pl-12 justify-center">
             <div className="relative w-fit flex flex-col items-end">
-              <span className="text-7xl sm:text-8xl md:text-9xl lg:text-[112px] xl:text-[128px] font-bold tracking-tight text-white/95 block select-none leading-none">
+              <span className="font-['Darker_Grotesque'] font-bold text-[128px] leading-[100%] tracking-normal text-center text-white/60 block select-none">
                 Portfolio
               </span>
-              <span className="text-sm sm:text-base text-zinc-400 font-semibold tracking-[0.24em] uppercase mt-3.5 block text-right">
+              <span className="font-['Darker_Grotesque'] text-white/60 font-medium text-[18px] leading-[100%] tracking-normal text-center block select-none">
                 SELECTED WORKS • 2026
               </span>
             </div>

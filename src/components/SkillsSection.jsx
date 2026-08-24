@@ -96,16 +96,16 @@ export default function SkillsSection() {
   return (
     <section className="w-full max-w-[1440px] mx-auto px-6 md:px-16 py-20 md:py-28 text-center" style={{ backgroundColor: '#000000' }}>
       {/* Eyebrow & Title */}
-      <div className="space-y-2.5 max-w-3xl mx-auto mb-14">
-        <div className="text-sm sm:text-base font-bold tracking-[0.2em] text-zinc-400 uppercase">
+      <div className="space-y-2.5 max-w-4xl mx-auto mb-14">
+        <div className="text-[20px] font-medium tracking-normal font-['Darker_Grotesque'] leading-[100%]">
           Skillset
         </div>
-        <h2 className="text-4xl sm:text-5xl md:text-[54px] font-extrabold tracking-tight text-white leading-tight">
+        <h2 className="text-[56px] font-bold tracking-tight leading-[100%]">
           Design skills built around real products
         </h2>
-        <p className="text-xl sm:text-2xl text-zinc-400 font-medium">
+        <p className="text-[24px] font-medium tracking-normal font-['Darker_Grotesque'] leading-[130%]">
           From understanding user needs to designing complete product experiences.
-        </p>
+        </p> 
       </div>
 
       {/* 8-Card Grid: 4 columns x 2 rows */}

@@ -3,7 +3,8 @@ import BackgroundGrid from './components/BackgroundGrid';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WorkIntro from './components/WorkIntro';
-import CaseStudyCard from './components/CaseStudyCard';
+import CaseStudy1 from './components/CaseStudy1';
+import CaseStudy2 from './components/CaseStudy2';
 import BeyondDesign from './components/BeyondDesign';
 import SkillsSection from './components/SkillsSection';
 import AboutSection from './components/AboutSection';
@@ -77,15 +78,7 @@ export default function App() {
             <WorkIntro />
 
             {/* Case Study 01 — PixelWhisk */}
-            <CaseStudyCard
-              number="01"
-              category="PixelWhisk"
-              title="From request to delivery"
-              description="PixelWhisk connects clients and internal teams throughout the website development process."
-              tags={["UX Research", "User Flows", "Wireframes", "Design System", "Hi-fi Screens"]}
-              variant="pixelwhisk"
-              caseStudyUrl="#case-study-1"
-            />
+            <CaseStudy1 />
 
             {/* Divider between case studies */}
             <div className="w-full max-w-[1440px] mx-auto px-6 md:px-16">
@@ -93,15 +86,7 @@ export default function App() {
             </div>
 
             {/* Case Study 02 — Lil Big Things */}
-            <CaseStudyCard
-              number="02"
-              category="Lil Big Things"
-              title="From scattered tasks to clear progress"
-              description="A work management platform that helps teams organize tasks, track ownership, and keep customers informed throughout the workflow."
-              tags={["User Flows", "Wireframes", "Design System", "Hi-fi Screens", "Developer Handoff", "Post Launch Support"]}
-              variant="lilbigthings"
-              caseStudyUrl="#case-study-2"
-            />
+            <CaseStudy2 />
 
           </div>
         </div>

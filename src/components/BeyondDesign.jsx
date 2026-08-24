@@ -47,26 +47,26 @@ export default function BeyondDesign() {
 
         {/* Left: eyebrow + title + description */}
         <div className="space-y-3">
-          <p className="text-sm font-bold tracking-[0.2em] text-zinc-400 uppercase">
+          <p className="text-[20px] font-medium tracking-normal text-zinc-400 leading-[100%]">
             Other Creative Work
           </p>
-          <h2 className="text-4xl sm:text-5xl md:text-[54px] font-extrabold tracking-tight text-white leading-tight">
+          <h2 className="text-[56px] font-bold tracking-normal text-white leading-[100%]">
             Beyond product design
           </h2>
-          <p className="text-xl sm:text-2xl text-zinc-400 font-medium max-w-xl">
+          <p className="text-[24px] font-['Darker_Grotesque'] leading-[130%] tracking-normal font-medium">
             A collection of illustrations, posters and motion work from my creative practice.
           </p>
         </div>
 
         {/* Right: filter tabs with pipe separators */}
-        <div className="flex items-center text-lg font-semibold shrink-0 self-end">
+        <div className="flex items-center text-[24px] font-medium leading-[130%] tracking-normal font-['Darker_Grotesque'] shrink-0 self-end">
           {filters.map((filter, i) => (
             <span key={filter} className="flex items-center">
               <button
                 onClick={() => setActiveFilter(filter)}
                 className={`px-1 py-1 transition-colors ${
                   activeFilter === filter
-                    ? 'text-white font-bold underline underline-offset-8 decoration-white/50'
+                    ? 'underline decoration-solid underline-offset-[25%] decoration-[1.5px] [text-decoration-skip-ink:auto]'
                     : 'text-zinc-500 hover:text-zinc-300 font-medium'
                 }`}
               >
