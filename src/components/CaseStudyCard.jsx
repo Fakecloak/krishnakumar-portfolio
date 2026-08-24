@@ -19,7 +19,7 @@ export default function CaseStudyCard({
             <span>Case Study {number} – {category}</span>
           </div>
 
-          <h3 className="text-4xl sm:text-5xl md:text-[54px] font-extrabold tracking-tight text-white leading-[1.02]">
+          <h3 className="font-['Darker_Grotesque'] font-semibold text-[48px] leading-[100%] tracking-normal text-white">
             {title}
           </h3>
 
@@ -52,7 +52,7 @@ export default function CaseStudyCard({
         </div>
 
         {/* Right Column: High Fidelity Laptop Display */}
-        <div className="lg:col-span-7 flex items-center justify-center">
+        <div className="lg:col-span-7 w-full flex items-center justify-end">
           <LaptopMockup variant={variant} />
         </div>
       </div>
