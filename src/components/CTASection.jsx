@@ -13,14 +13,15 @@ export default function CTASection() {
       <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-16">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pt-4">
           {/* Left Column: Heading + Email */}
-          <div className="space-y-2">
-            <div className="text-sm sm:text-base font-bold tracking-[0.2em] text-zinc-400 uppercase">
+          <div className="space-y-3">
+            <div className="text-[18px] font-medium tracking-normal leading-[100%] text-white/70 ">
               Contact
             </div>
-            <h2 className="text-4xl sm:text-5xl md:text-[54px] font-extrabold tracking-tight text-white leading-tight">
+            <h2 className="font-['Darker_Grotesque'] text-[64px] font-bold tracking-normal leading-[100%] text-white">
               Let's Create Together
             </h2>
-            <p className="text-xl sm:text-2xl text-zinc-400 font-medium">
+            <p className="text-[24px] tracking-normal leading-[130%] font-medium underline decoration-solid underline-offset-[25%] decoration-[1.5px] text-white/70"
+                  style={{ textDecorationSkipInk: 'auto' }}>
               <a
                 href="mailto:krishnakumar.191104@gmail.com"
                 className="hover:text-white transition-colors"
@@ -31,22 +32,22 @@ export default function CTASection() {
           </div>
 
           {/* Right Column: CTA Buttons */}
-          <div className="flex items-center gap-4 flex-wrap">
+          <div className="flex items-center gap-3 flex-wrap">
             <a
               href="#resume"
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/30 text-white hover:border-white hover:bg-white/10 transition-all text-lg sm:text-xl font-semibold"
+              className="inline-flex items-center justify-center w-[262px] h-[64px] gap-3 px-6 rounded-[45px] border border-white text-[24px] leading-[120%] tracking-normal font-medium text-white hover:bg-white/10 transition-all"
             >
               <span>Download Resume</span>
-              <span>↓</span>
+              <span className="text-[24px] leading-none w-[14px] ">↓</span>
             </a>
 
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-6 py-2.5 rounded-full bg-white text-black hover:bg-zinc-100 transition-all text-lg sm:text-xl font-semibold shadow-lg shadow-white/5"
+              className="inline-flex items-center justify-center w-[147.9px] h-[62px] gap-3 p-6 rounded-[45px] bg-white text-black hover:bg-zinc-100 transition-all text-lg sm:text-xl font-semibold shadow-lg shadow-white/5"
             >
-              <span>LinkedIn</span>
+              <span className='text-[24px] font-["Darker_Grotesque"] font-medium leading-[120%] tracking-normal text=[#1B1B1B] '>LinkedIn</span>
               <span>↗</span>
             </a>
           </div>
