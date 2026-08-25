@@ -1,6 +1,8 @@
 import React from 'react';
 
+
 export default function Hero() {
+  const arrow = './public/arrow.svg';
   return (
     <section 
       className="relative w-full flex justify-center overflow-hidden min-h-screen flex-col justify-between pt-[72px]"
@@ -31,17 +33,17 @@ export default function Hero() {
           
           {/* Left Column: Headline, Subtitle, Badges */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[74px] xl:text-[64px] font-semibold tracking-tight text-white leading-[0.98]">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[74px] xl:text-[64px] font-semibold tracking-tight text-white leading-[100%] pb-[16px]">
               Designing digital products<br />
               with clarity and purpose
             </h1>
 
-            <p className="w-[648px] max-w-full font-['Darker_Grotesque'] font-normal text-[24px] leading-[130%] tracking-[0%] mt-5">
+            <p className="w-[648px] max-w-full font-['Darker_Grotesque'] font-normal text-[24px] leading-[130%] tracking-[0%] pb-[32px]">
               From early product thinking to polished interfaces, I create clear and purposeful digital experiences.
             </p>
 
             {/* 3 Boxed Metadata Tags */} 
-            <div className="mt-7 flex flex-wrap items-center gap-[12px]">
+            <div className=" flex flex-wrap items-center gap-[12px]">
               <span className="flex h-[27px] w-[131px] items-center justify-center border-[0.5px] border-white font-['Darker_Grotesque'] text-[20px] font-normal leading-none tracking-normal">
                 Product Design
               </span>
@@ -58,8 +60,8 @@ export default function Hero() {
           </div>
 
           {/* Right Column: 'Portfolio' anchored */}
-          <div className="lg:col-span-5 flex flex-col lg:pl-12 justify-center">
-            <div className="relative w-fit flex flex-col items-end">
+          <div className="lg:col-span-5 flex flex-col justify-center items-end">
+            <div className="relative w-fit flex flex-col items-end ">
               <span className="font-['Darker_Grotesque'] font-bold text-[128px] leading-[100%] tracking-normal text-center text-white/60 block select-none">
                 Portfolio
               </span>
@@ -91,7 +93,7 @@ export default function Hero() {
         >
           Scroll to explore
         </span>
-        <span className="text-base leading-none animate-bounce mt-0.5" style={{ color: '#FFFFFFB2' }}>↓</span>
+        <span className=" text-4xl leading-none animate-bounce mt-0.5" style={{ color: '#FFFFFFB2' }}><img  src={arrow} alt="arrow" /></span>
       </div>
     </section>
   );

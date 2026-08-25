@@ -8,10 +8,10 @@ export default function WorkIntro() {
   return (
     <section
       id="work"
-      className="relative z-10 w-full overflow-hidden py-20 md:py-28 text-center scroll-mt-[75px]"
+      className="relative z-10 w-full overflow-hidden  text-center scroll-mt-[75px]"
       style={{ backgroundColor: 'transparent' }}
     >
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-16">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto  pt-[128px] pb-[84px]">
         <div
           style={{
             color: '#FFFFFFB2',
