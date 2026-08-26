@@ -7,6 +7,43 @@ const artworks = [
   { id: 4, title: 'Playground Primitives', src: '/artworks/geometry.png' },
 ];
 
+const illustrations = [
+  '/illustrations/Frame 2147257403.svg',
+  '/illustrations/Frame 2147257404.svg',
+  '/illustrations/Frame 2147257405.svg',
+  '/illustrations/Frame 2147257406.svg',
+  '/illustrations/Frame 2147257407.svg',
+  '/illustrations/Frame 2147257408.svg',
+  '/illustrations/Frame 2147257409.svg',
+  '/illustrations/Frame 2147257410.svg',
+  '/illustrations/Frame 2147257411.svg',
+  '/illustrations/Frame 2147257412.svg',
+  '/illustrations/Frame 2147257413.svg',
+];
+
+function IllustrationCard({ src }) {
+  return (
+    <div
+      className="shrink-0"
+      style={{
+        width: '398px',
+        height: '436px',
+        padding: '10px',
+        opacity: 1,
+        transform: 'rotate(0deg)',
+        background: '#FFFFFF0D',
+        backdropFilter: 'blur(10px)',
+      }}
+    >
+      <img
+        src={src}
+        alt=""
+        style={{ width: 'auto', height: 'auto', objectFit: 'contain' }}
+      />
+    </div>
+  );
+}
+
 const filters = ['Illustrations', 'Motion', 'Posters'];
 
 /* Card — fixedWidth=true for marquee, false/default for grid */
@@ -36,6 +73,7 @@ export default function BeyondDesign() {
 
   // Duplicate for seamless loop
   const loopedArtworks = [...artworks, ...artworks, ...artworks];
+  const loopedIllustrations = [...illustrations, ...illustrations, ...illustrations];
 
   return (
     <section
@@ -97,8 +135,19 @@ export default function BeyondDesign() {
         }
       `}</style>
 
-      {/* ── Illustrations & Motion: infinite horizontal marquee ── */}
-      {(activeFilter === 'Illustrations' || activeFilter === 'Motion') && (
+      {/* ── Illustrations: infinite horizontal marquee with illustration SVGs ── */}
+      {activeFilter === 'Illustrations' && (
+        <div className="overflow-hidden w-full">
+          <div className="marquee-track">
+            {loopedIllustrations.map((src, i) => (
+              <IllustrationCard key={i} src={src} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* ── Motion: infinite horizontal marquee ── */}
+      {activeFilter === 'Motion' && (
         <div className="overflow-hidden w-full">
           <div className="marquee-track">
             {loopedArtworks.map(({ src, title }, i) => (

@@ -13,7 +13,7 @@ export default function Footer() {
             href="https://behance.net"
             target="_blank"
             rel="noreferrer"
-            className="underline underline-[#000000]/70 decoration-solid decoration-[1.5%] underline-offset-[25%]  text-[#000000]/70 decoration-[1.5px] hover:text-white transition-colors"
+            className="underline underline-[#000000]/70 decoration-solid decoration-[1.5%] underline-offset-[25%]  text-[#000000]/70  hover:text-white transition-colors"
           >
             Behance
           </a>
@@ -22,7 +22,7 @@ export default function Footer() {
             href="https://linkedin.com"
             target="_blank"
             rel="noreferrer"
-            className="underline underline-[#000000]/70 decoration-solid decoration-[1.5%] underline-offset-[25%] text-[#000000]/70 decoration-[1.5px] hover:text-white transition-colors"
+            className="underline underline-[#000000]/70 decoration-solid decoration-[1.5%] underline-offset-[25%] text-[#000000]/70  hover:text-white transition-colors"
           >
             LinkedIn
           </a>
