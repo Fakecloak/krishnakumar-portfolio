@@ -98,7 +98,7 @@ function MotionCard({ src }) {
   );
 }
 
-const filters = ['Illustrations', 'Motion', 'Posters'];
+const filters = ['Motion', 'Illustrations', 'Posters'];
 
 /* Card — fixedWidth=true for marquee, false/default for grid */
 function ArtworkCard({ title, src, fixedWidth = false }) {
@@ -123,7 +123,7 @@ function ArtworkCard({ title, src, fixedWidth = false }) {
 }
 
 export default function BeyondDesign() {
-  const [activeFilter, setActiveFilter] = useState('Illustrations');
+  const [activeFilter, setActiveFilter] = useState('Motion');
 
   // Duplicate for seamless loop
   const loopedArtworks = [...artworks, ...artworks, ...artworks];
@@ -199,23 +199,29 @@ export default function BeyondDesign() {
         }
       `}</style>
 
-      {/* ── Illustrations: infinite horizontal marquee with illustration SVGs ── */}
-      {activeFilter === 'Illustrations' && (
-        <div className="overflow-hidden w-full">
-          <div className="marquee-track">
-            {loopedIllustrations.map((src, i) => (
-              <IllustrationCard key={i} src={src} />
+      {/* ── Motion: full-viewport infinite horizontal marquee ── */}
+      {activeFilter === 'Motion' && (
+        <div
+          className="overflow-hidden"
+          style={{ width: '100vw', marginLeft: 'calc(50% - 50vw)' }}
+        >
+          <div className="marquee-track-motion">
+            {loopedMotionClips.map((src, i) => (
+              <MotionCard key={i} src={src} />
             ))}
           </div>
         </div>
       )}
 
-      {/* ── Motion: infinite horizontal marquee ── */}
-      {activeFilter === 'Motion' && (
-        <div className="overflow-hidden w-full">
-          <div className="marquee-track-motion">
-            {loopedMotionClips.map((src, i) => (
-              <MotionCard key={i} src={src} />
+      {/* ── Illustrations: infinite horizontal marquee with illustration SVGs ── */}
+      {activeFilter === 'Illustrations' && (
+        <div
+          className="overflow-hidden"
+          style={{ width: '100vw', marginLeft: 'calc(50% - 50vw)' }}
+        >
+          <div className="marquee-track">
+            {loopedIllustrations.map((src, i) => (
+              <IllustrationCard key={i} src={src} />
             ))}
           </div>
         </div>
