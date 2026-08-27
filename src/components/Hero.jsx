@@ -44,19 +44,24 @@ export default function Hero() {
 
             {/* 3 Boxed Metadata Tags */} 
             <div className=" flex flex-wrap items-center gap-[12px]">
-              <span className="flex h-[27px] w-[131px] items-center justify-center border-[0.5px] border-white font-['Darker_Grotesque'] text-[20px] font-normal leading-none tracking-normal">
+              <div className="flex h-[27px] px-[8px] pt-[8px] pb-[12px] items-center justify-center border-[0.5px] border-white  ">
+              <p className="font-['Darker_Grotesque'] text-[20px] font-normal leading-[5px]">
                 Product Design
-              </span>
+              </p>
+              </div>
 
-              <span className="flex h-[27px] w-[131px] items-center justify-center border-[0.5px] border-white font-['Darker_Grotesque'] text-[20px] font-normal leading-none tracking-normal">
+              <div className="flex h-[27px] px-[8px] pt-[8px] pb-[12px] items-center justify-center border-[0.5px] border-white  ">
+              <p className="font-['Darker_Grotesque'] text-[20px] font-normal leading-[5px]">
                 UI / UX Design
-              </span>
+              </p>
+              </div>
 
-              <span className="flex h-[27px] w-[131px] items-center justify-center border-[0.5px] border-white font-['Darker_Grotesque'] text-[20px] font-normal leading-none tracking-normal">
+              <div className="flex h-[27px] px-[8px] pt-[8px] pb-[12px] items-center justify-center border-[0.5px] border-white  ">
+              <p className="font-['Darker_Grotesque'] text-[20px] font-normal leading-[5px]">
                 Design Systems
-              </span>
-            </div>
-            
+              </p>
+              </div>
+          </div>
           </div>
 
           {/* Right Column: 'Portfolio' anchored */}

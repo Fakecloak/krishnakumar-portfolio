@@ -24,21 +24,30 @@ const illustrations = [
 function IllustrationCard({ src }) {
   return (
     <div
-      className="shrink-0"
-      style={{
-        width: '398px',
-        height: '436px',
-        padding: '10px',
-        opacity: 1,
-        transform: 'rotate(0deg)',
-        background: '#FFFFFF0D',
-        backdropFilter: 'blur(10px)',
-      }}
+      className="
+        shrink-0
+        flex
+        items-center
+        justify-center
+        w-[398px]
+        h-[436px]
+        opacity-100
+        rotate-0
+        bg-white/[0.05]
+        backdrop-blur-[10px]
+        border-[0.5px]
+        border-white/50
+        rounded-[6px]
+      "
     >
       <img
         src={src}
         alt=""
-        style={{ width: 'auto', height: 'auto', objectFit: 'contain' }}
+        className="
+          w-[398px]
+          h-[436px]
+          object-fit
+        "
       />
     </div>
   );
@@ -77,18 +86,18 @@ export default function BeyondDesign() {
 
   return (
     <section
-      className="w-full max-w-[1440px] mx-auto px-6 md:px-16 py-20 md:py-28"
+      className="w-full max-w-[1440px] mx-auto px-6 md:px-16"
       style={{ backgroundColor: '#000000' }}
     >
       {/* ── Header row ── */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6  pb-[84px]">
 
         {/* Left: eyebrow + title + description */}
-        <div className="space-y-3">
-          <p className="text-[20px] font-medium tracking-normal text-zinc-400 leading-[100%]">
+        <div className="">
+          <p className="text-[20px] font-medium tracking-normal text-white/70 leading-[100%] pb-[8px]">
             Other Creative Work
           </p>
-          <h2 className="text-[56px] font-bold tracking-normal text-white leading-[100%]">
+          <h2 className="text-[56px] font-bold tracking-normal text-white leading-[100%] pb-[16px]">
             Beyond product design
           </h2>
           <p className="text-[24px] font-['Darker_Grotesque'] leading-[130%] tracking-normal font-medium">
@@ -102,16 +111,16 @@ export default function BeyondDesign() {
             <span key={filter} className="flex items-center">
               <button
                 onClick={() => setActiveFilter(filter)}
-                className={`px-1 py-1 transition-colors ${
+                className={`p-[0px] transition-colors ${
                   activeFilter === filter
-                    ? 'underline decoration-solid underline-offset-[25%] decoration-[1.5px] [text-decoration-skip-ink:auto]'
-                    : 'text-zinc-500 hover:text-zinc-300 font-medium'
+                    ? 'underline decoration-solid underline-offset-[25%] decoration-[1.5%] [text-decoration-skip-ink:auto]'
+                    : 'text-white/70 hover:text-white font-medium'
                 }`}
               >
                 {filter}
               </button>
               {i < filters.length - 1 && (
-                <span className="text-zinc-600 select-none mx-1">|</span>
+                <span className="text-white/70 select-none px-[16px]">|</span>
               )}
             </span>
           ))}
@@ -126,9 +135,9 @@ export default function BeyondDesign() {
         }
         .marquee-track {
           display: flex;
-          gap: 10px;
+          gap: 24px;
           width: max-content;
-          animation: marquee 18s linear infinite;
+          animation: marquee 35s linear infinite;
         }
         .marquee-track:hover {
           animation-play-state: paused;

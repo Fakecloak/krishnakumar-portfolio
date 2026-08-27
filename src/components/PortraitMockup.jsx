@@ -19,7 +19,7 @@ export default function PortraitMockup({
       <img
         src={imageSrc}
         alt={alt}
-        className="w-full h-full object-cover opacity-80 scale-110"
+        className="w-full h-full object-cover opacity-100 scale-110"
       />
 
     </div>

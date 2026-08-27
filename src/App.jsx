@@ -14,7 +14,7 @@ import Footer from './components/Footer';
 // Shared background image styles (product zone, about zone, etc.)
 const bgStyle = {
   backgroundImage: "url('/site-bg.png')",
-  backgroundSize: 'cover',
+  backgroundSize: '100% 100%',
   backgroundPosition: 'center center',
   backgroundRepeat: 'no-repeat',
 };
@@ -82,7 +82,7 @@ export default function App() {
 
             {/* Divider between case studies */}
             <div className="w-full max-w-[1440px] mx-auto px-6 md:px-16">
-              <div className="border-t border-white/[0.08]" />
+              <div className=" border-white/50 border-t-[0.5px]" />
             </div>
 
             {/* Case Study 02 — Lil Big Things */}

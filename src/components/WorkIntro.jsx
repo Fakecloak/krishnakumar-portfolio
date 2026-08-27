@@ -22,7 +22,7 @@ export default function WorkIntro() {
             letterSpacing: '0%',
             textAlign: 'center',
             verticalAlign: 'bottom',
-            marginBottom: '14px',
+            marginBottom: '8px',
           }}
         >
           Product Works

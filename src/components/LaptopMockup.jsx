@@ -11,11 +11,11 @@ export default function LaptopMockup({
   const altText = alt || defaultAlt;
 
   return (
-    <div className="w-[649px] h-[436px] overflow-hidden rounded-lg">
+    <div className="w-[649px] h-[436px] overflow-hidden rounded-[6px] border-white/50 border-[0.80px] ">
       <img
         src={src}
         alt={altText}
-        className="w-full h-full object-cover scale-[1.45]"
+        className="w-full h-full object-cover"
         style={{
           transformOrigin: 'center center',
           opacity: 1,
