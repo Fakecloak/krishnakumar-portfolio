@@ -21,6 +21,15 @@ const illustrations = [
   '/illustrations/Frame 2147257413.svg',
 ];
 
+const motionClips = [
+  '/motion/1.mp4',
+  '/motion/2.mp4',
+  '/motion/3.mp4',
+  '/motion/4.mp4',
+  '/motion/5.mp4',
+  '/motion/6.mp4',
+];
+
 function IllustrationCard({ src }) {
   return (
     <div
@@ -47,6 +56,42 @@ function IllustrationCard({ src }) {
           w-[398px]
           h-[436px]
           object-fit
+        "
+      />
+    </div>
+  );
+}
+
+function MotionCard({ src }) {
+  return (
+    <div
+      className="
+        shrink-0
+        flex
+        items-center
+        justify-center
+        w-[775px]
+        h-[436px]
+        opacity-100
+        rotate-0
+        bg-white/[0.05]
+        backdrop-blur-[10px]
+        border-[0.5px]
+        border-white/50
+        rounded-[6px]
+        overflow-hidden
+      "
+    >
+      <video
+        src={src}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="
+          w-[775px]
+          h-[436px]
+          object-contain
         "
       />
     </div>
@@ -83,6 +128,7 @@ export default function BeyondDesign() {
   // Duplicate for seamless loop
   const loopedArtworks = [...artworks, ...artworks, ...artworks];
   const loopedIllustrations = [...illustrations, ...illustrations, ...illustrations];
+  const loopedMotionClips = [...motionClips, ...motionClips, ...motionClips];
 
   return (
     <section
@@ -142,6 +188,15 @@ export default function BeyondDesign() {
         .marquee-track:hover {
           animation-play-state: paused;
         }
+        .marquee-track-motion {
+          display: flex;
+          gap: 24px;
+          width: max-content;
+          animation: marquee 45s linear infinite;
+        }
+        .marquee-track-motion:hover {
+          animation-play-state: paused;
+        }
       `}</style>
 
       {/* ── Illustrations: infinite horizontal marquee with illustration SVGs ── */}
@@ -158,9 +213,9 @@ export default function BeyondDesign() {
       {/* ── Motion: infinite horizontal marquee ── */}
       {activeFilter === 'Motion' && (
         <div className="overflow-hidden w-full">
-          <div className="marquee-track">
-            {loopedArtworks.map(({ src, title }, i) => (
-              <ArtworkCard key={i} title={title} src={src} fixedWidth={true} />
+          <div className="marquee-track-motion">
+            {loopedMotionClips.map((src, i) => (
+              <MotionCard key={i} src={src} />
             ))}
           </div>
         </div>
