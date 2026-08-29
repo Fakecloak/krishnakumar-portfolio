@@ -66,3 +66,34 @@
 img {
   image-rendering: -webkit-optimize-contrast;
 }
+
+/* ── BeyondDesign marquee animations ──────────────────────────────────────
+   Defined here (bundled once) instead of inside a JSX <style> block so the
+   browser does not re-parse and re-inject styles on every React re-render.
+   ──────────────────────────────────────────────────────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+.marquee-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-track-motion {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: marquee 45s linear infinite;
+}
+
+.marquee-track-motion:hover {
+  animation-play-state: paused;
+}

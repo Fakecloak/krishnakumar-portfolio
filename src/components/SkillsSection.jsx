@@ -1,41 +1,12 @@
+// ─────────────────────────────────────────────
+// SkillsSection.jsx — Presentational Component
+//
+// Data moved to constants/portfolioData.js
+// ─────────────────────────────────────────────
 import React from 'react';
+import { skills } from '../constants/portfolioData';
 
 export default function SkillsSection() {
-  const skills = [
-  {
-    name: "UX Research",
-    icon: "/skills/uxresearch.svg",
-  },
-  {
-    name: "User Flows",
-    icon: "/skills/userflow.svg",
-  },
-  {
-    name: "Wireframing",
-    icon: "/skills/wireframe.svg",
-  },
-  {
-    name: "UI Design",
-    icon: "/skills/uidesign.svg",
-  },
-  {
-    name: "Design System",
-    icon: "/skills/designsys.svg",
-  },
-  {
-    name: "Prototyping",
-    icon: "/skills/proto.svg",
-  },
-  {
-    name: "Motion Graphics",
-    icon: "/skills/motion.svg",
-  },
-  {
-    name: "Illustrations",
-    icon: "/skills/illustration.svg",
-  },
-];
-
   return (
     <section className="w-full max-w-[1440px] mx-auto px-6 md:px-16 py-[128px] text-center" style={{ backgroundColor: '#000000' }}>
       {/* Eyebrow & Title */}

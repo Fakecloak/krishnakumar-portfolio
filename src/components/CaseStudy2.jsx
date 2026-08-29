@@ -1,19 +1,13 @@
+// ─────────────────────────────────────────────
+// CaseStudy2.jsx — Presentational Component
+//
+// Data moved to constants/portfolioData.js
+// ─────────────────────────────────────────────
 import React from 'react';
-
 import LaptopMockup from './LaptopMockup';
+import { caseStudy2, assets } from '../constants/portfolioData';
 
 export default function CaseStudy2() {
-  const tags = [
-    "User Flows",
-    "Wireframes",
-    "Design System",
-    "Hi-fi Screens",
-    "Developer Handoff",
-    "Post Launch Support"
-  ];
-
-  const left_arrow = "/public/left_arrow.svg";
-
   return (
     <section className="w-full max-w-[1440px] mx-auto px-[64px] pt-[64px] pb-[128px]">
 
@@ -40,7 +34,7 @@ export default function CaseStudy2() {
 
           {/* Tags */}
           <div className="flex max-w-[90%] flex-wrap items-center gap-2.5 pb-[64px]">
-            {tags.map((tag, idx) => (
+            {caseStudy2.tags.map((tag, idx) => (
               <div
                 key={idx}
                 className="flex h-[27px] px-[8px] pt-[8px] pb-[12px] items-center justify-center border-[0.5px] border-white"
@@ -60,7 +54,7 @@ export default function CaseStudy2() {
             >
               <span>View Case Study</span>
               <span className="transition-transform group-hover:translate-x-1">
-                <img src={left_arrow} alt="left arrow" />
+                <img src={assets.leftArrow} alt="left arrow" />
               </span>
             </a>
           </div>

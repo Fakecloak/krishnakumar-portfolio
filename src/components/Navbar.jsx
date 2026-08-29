@@ -1,76 +1,14 @@
-import React, { useState, useEffect } from 'react';
-
-const navLinks = [
-  { label: 'Work', href: '#work' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
-];
+// ─────────────────────────────────────────────
+// Navbar.jsx — Presentational Component
+//
+// Pure UI. All logic lives in useNavbar hook.
+// ─────────────────────────────────────────────
+import React from 'react';
+import { useNavbar } from '../hooks/useNavbar';
+import { navLinks } from '../constants/portfolioData';
 
 export default function Navbar() {
-  const [active, setActive] = useState('');
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const sections = navLinks
-      .map(({ href }) => document.querySelector(href))
-      .filter(Boolean);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive('#' + entry.target.id);
-        });
-      },
-      { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
-    );
-
-    sections.forEach((s) => observer.observe(s));
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleNavClick = (e, href) => {
-    e.preventDefault();
-    setActive(href);
-
-    const target = document.querySelector(href);
-
-    if (target) {
-      const navHeight = 75;
-      const elementPosition = target.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - navHeight;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-
-      window.history.replaceState(null, '', href);
-    }
-  };
-
-  const handleBrandClick = (e) => {
-    e.preventDefault();
-    setActive('');
-
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-
-    window.history.replaceState(null, '', window.location.pathname);
-  };
+  const { active, isScrolled, handleNavClick, handleBrandClick } = useNavbar();
 
   return (
     <header

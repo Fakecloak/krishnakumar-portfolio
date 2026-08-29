@@ -1,8 +1,12 @@
+// ─────────────────────────────────────────────
+// Hero.jsx — Presentational Component
+//
+// Asset path moved to constants/portfolioData.js
+// ─────────────────────────────────────────────
 import React from 'react';
-
+import { assets } from '../constants/portfolioData';
 
 export default function Hero() {
-  const arrow = './public/arrow.svg';
   return (
     <section 
       className="relative w-full flex justify-center overflow-hidden min-h-screen flex-col justify-between pt-[72px]"
@@ -98,7 +102,9 @@ export default function Hero() {
         >
           Scroll to explore
         </span>
-        <span className=" text-4xl leading-none animate-bounce mt-0.5" style={{ color: '#FFFFFFB2' }}><img  src={arrow} alt="arrow" /></span>
+        <span className=" text-4xl leading-none animate-bounce mt-0.5" style={{ color: '#FFFFFFB2' }}>
+          <img src={assets.arrow} alt="arrow" />
+        </span>
       </div>
     </section>
   );

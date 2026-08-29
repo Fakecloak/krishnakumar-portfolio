@@ -1,36 +1,16 @@
-import React, { useState } from 'react';
+// ─────────────────────────────────────────────
+// BeyondDesign.jsx — Presentational Component
+//
+// Pure UI. All logic (filter state, memoized
+// arrays) lives in useBeyondDesign hook.
+// ─────────────────────────────────────────────
+import React from 'react';
+import { useBeyondDesign } from '../hooks/useBeyondDesign';
+import { artworks, beyondDesignFilters } from '../constants/portfolioData';
 
-const artworks = [
-  { id: 1, title: 'Dispatch Logistics',    src: '/artworks/truck.png' },
-  { id: 2, title: 'Design Toolkit',        src: '/artworks/toolbox.png' },
-  { id: 3, title: 'Automated Pipeline',    src: '/artworks/conveyor.png' },
-  { id: 4, title: 'Playground Primitives', src: '/artworks/geometry.png' },
-];
-
-const illustrations = [
-  '/illustrations/Frame 2147257403.svg',
-  '/illustrations/Frame 2147257404.svg',
-  '/illustrations/Frame 2147257405.svg',
-  '/illustrations/Frame 2147257406.svg',
-  '/illustrations/Frame 2147257407.svg',
-  '/illustrations/Frame 2147257408.svg',
-  '/illustrations/Frame 2147257409.svg',
-  '/illustrations/Frame 2147257410.svg',
-  '/illustrations/Frame 2147257411.svg',
-  '/illustrations/Frame 2147257412.svg',
-  '/illustrations/Frame 2147257413.svg',
-];
-
-const motionClips = [
-  '/motion/1.mp4',
-  '/motion/2.mp4',
-  '/motion/3.mp4',
-  '/motion/4.mp4',
-  '/motion/5.mp4',
-  '/motion/6.mp4',
-];
-
-function IllustrationCard({ src }) {
+// React.memo: IllustrationCard only re-renders when its `src` prop changes.
+// Without this, switching filters would re-render all visible cards unnecessarily.
+const IllustrationCard = React.memo(function IllustrationCard({ src }) {
   return (
     <div
       className="
@@ -60,9 +40,12 @@ function IllustrationCard({ src }) {
       />
     </div>
   );
-}
+});
 
-function MotionCard({ src }) {
+// React.memo: MotionCard only re-renders when its `src` prop changes.
+// Videos are expensive — memo ensures they are not unmounted/remounted on
+// unrelated state updates inside BeyondDesign.
+const MotionCard = React.memo(function MotionCard({ src }) {
   return (
     <div
       className="
@@ -96,11 +79,9 @@ function MotionCard({ src }) {
       />
     </div>
   );
-}
+});
 
-const filters = ['Motion', 'Illustrations', 'Posters'];
-
-/* Card — fixedWidth=true for marquee, false/default for grid */
+/* ArtworkCard — fixedWidth=true for marquee, false/default for grid */
 function ArtworkCard({ title, src, fixedWidth = false }) {
   return (
     <div
@@ -123,12 +104,12 @@ function ArtworkCard({ title, src, fixedWidth = false }) {
 }
 
 export default function BeyondDesign() {
-  const [activeFilter, setActiveFilter] = useState('Motion');
-
-  // Duplicate for seamless loop
-  const loopedArtworks = [...artworks, ...artworks, ...artworks];
-  const loopedIllustrations = [...illustrations, ...illustrations, ...illustrations];
-  const loopedMotionClips = [...motionClips, ...motionClips, ...motionClips];
+  const {
+    activeFilter,
+    setActiveFilter,
+    loopedIllustrations,
+    loopedMotionClips,
+  } = useBeyondDesign();
 
   return (
     <section
@@ -153,7 +134,7 @@ export default function BeyondDesign() {
 
         {/* Right: filter tabs with pipe separators */}
         <div className="flex items-center text-[24px] font-medium leading-[130%] tracking-normal font-['Darker_Grotesque'] shrink-0 self-end">
-          {filters.map((filter, i) => (
+          {beyondDesignFilters.map((filter, i) => (
             <span key={filter} className="flex items-center">
               <button
                 onClick={() => setActiveFilter(filter)}
@@ -165,7 +146,7 @@ export default function BeyondDesign() {
               >
                 {filter}
               </button>
-              {i < filters.length - 1 && (
+              {i < beyondDesignFilters.length - 1 && (
                 <span className="text-white/70 select-none px-[16px]">|</span>
               )}
             </span>
@@ -173,31 +154,7 @@ export default function BeyondDesign() {
         </div>
       </div>
 
-      {/* ── Marquee CSS — always injected ── */}
-      <style>{`
-        @keyframes marquee {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-33.333%); }
-        }
-        .marquee-track {
-          display: flex;
-          gap: 24px;
-          width: max-content;
-          animation: marquee 35s linear infinite;
-        }
-        .marquee-track:hover {
-          animation-play-state: paused;
-        }
-        .marquee-track-motion {
-          display: flex;
-          gap: 24px;
-          width: max-content;
-          animation: marquee 45s linear infinite;
-        }
-        .marquee-track-motion:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
+      {/* ── Marquee CSS lives in index.css (bundled once, never re-injected) ── */}
 
       {/* ── Motion: full-viewport infinite horizontal marquee ── */}
       {activeFilter === 'Motion' && (

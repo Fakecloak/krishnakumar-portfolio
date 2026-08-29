@@ -1,12 +1,14 @@
+// ─────────────────────────────────────────────
+// CTASection.jsx — Presentational Component
+//
+// Asset paths moved to constants/portfolioData.js
+// Background comes from the parent zone wrapper
+// in App.jsx (site-bg.jpg original).
+// ─────────────────────────────────────────────
 import React from 'react';
+import { assets } from '../constants/portfolioData';
 
-/**
- * CTASection — transparent background.
- * Background comes from the parent zone wrapper in App.jsx (site-bg.jpg original).
- */
 export default function CTASection() {
-  const arrow = './public/arrow.svg';
-  const side_arrow = './public/side_arrow.svg';
   return (
     <section
       id="contact"
@@ -40,7 +42,9 @@ export default function CTASection() {
               className="inline-flex items-center justify-center h-[64px] gap-3 px-6 rounded-[45px] border border-white text-[24px] leading-[120%] tracking-normal font-medium text-white hover:bg-white/10 transition-all group"
             >
               <span >Download Resume</span>
-              <span className="text-[24px] leading-none w-[14px] transition-transform group-hover:translate-y-1"><img className="text-white/100 "src={arrow} alt="arrow" /></span>
+              <span className="text-[24px] leading-none w-[14px] transition-transform group-hover:translate-y-1">
+                <img className="text-white/100 " src={assets.arrow} alt="arrow" />
+              </span>
             </a>
 
             <a
@@ -50,7 +54,9 @@ export default function CTASection() {
               className="inline-flex items-center justify-center  h-[62px] gap-3 p-6 rounded-[45px] bg-white text-black hover:bg-[#999999] transition-all text-[24px] font-medium shadow-lg group shadow-white/5"
             >
               <span className='text-[24px] font-["Darker_Grotesque"] font-medium leading-[120%] tracking-normal text=[#1B1B1B] '>LinkedIn</span>
-              <span className="transition-transform group-hover:translate-x-1 hover:-translate-y-1 "><img src={side_arrow} alt="sidearrow" /></span>
+              <span className="transition-transform group-hover:translate-x-1 hover:-translate-y-1 ">
+                <img src={assets.sideArrow} alt="sidearrow" />
+              </span>
             </a>
           </div>
         </div>
