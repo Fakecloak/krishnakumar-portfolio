@@ -4,6 +4,7 @@
 // Data moved to constants/portfolioData.js
 // ─────────────────────────────────────────────
 import React from 'react';
+import { Link } from 'react-router-dom';
 import LaptopMockup from './LaptopMockup';
 import { caseStudy1, assets } from '../constants/portfolioData';
 
@@ -44,15 +45,15 @@ export default function CaseStudy1() {
 
           {/* Action Button */}
           <div className="">
-            <a
-              href="#case-study-1"
+            <Link
+              to="/case-study/pixelwhisk"
               className="inline-flex  h-[64px] items-center justify-center bg-white gap-3 p-6 rounded-[45px] border border-white/30 text-[#1B1B1B] hover:bg-[#999999] transition-all font-['Darker_Grotesque'] font-medium text-[24px] group"
             >
               <span>View Case Study</span>
               <span className="transition-transform group-hover:translate-x-1">
                 <img src={assets.leftArrow} alt="left arrow" />
               </span>
-            </a>
+            </Link>
           </div>
         </div>
 
