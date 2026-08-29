@@ -12,31 +12,48 @@ export function useNavbar() {
   const [active, setActive] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Tracks which section is in view via IntersectionObserver
+  // Single scroll listener — works in both scroll directions.
+  //
+  // Strategy: on every scroll event, iterate sections in DOM order
+  // and set active to the last one whose top edge is above 45% of
+  // the viewport height. When scrolling back up, a higher section
+  // reclaims the threshold first, so active updates correctly.
+  //
+  // Special case: when within 150px of page bottom, force #contact
+  // because the Contact section is never tall enough to cross the threshold.
   useEffect(() => {
-    const sections = navLinks
-      .map(({ href }) => document.querySelector(href))
-      .filter(Boolean);
+    const getSection = (href) => document.querySelector(href);
+    const THRESHOLD = window.innerHeight * 0.45;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive('#' + entry.target.id);
-        });
-      },
-      { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
-    );
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
 
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
-  }, []);
+      // End-of-page guard for Contact
+      const nearBottom =
+        window.innerHeight + window.scrollY >= document.body.offsetHeight - 150;
+      if (nearBottom) {
+        setActive('#contact');
+        return;
+      }
 
-  // Tracks whether the page has been scrolled (for blur backdrop)
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 0);
-    window.addEventListener('scroll', handleScroll);
+      // Find which section is currently in view
+      let current = '';
+      for (const { href } of navLinks) {
+        const el = getSection(href);
+        if (!el) continue;
+        if (el.getBoundingClientRect().top <= THRESHOLD) {
+          current = href;
+        }
+      }
+      setActive(current);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Run once on mount so initial position is correct
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
 
   const handleNavClick = (e, href) => {
     e.preventDefault();
