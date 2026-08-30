@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import whiskImage from "../../assets/case-study1/whisk.png";
+import pixelwhiskIcon from "../../assets/case-study1/pixelwhisk.svg";
+
 
 // ─── Typography primitive ────────────────────────────────────────────────────
 function T({ children, className = "" }) {
@@ -315,88 +318,134 @@ function CaseStudyContent({ data }) {
 }
 
 // ─── Case Study Navigation ────────────────────────────────────────────────────
-// Full width 1440px, height 364px, padding-top 64px
-// PixelWhisk group: 191×40.9545, gap 23.5px
-// SVG: 40.9512×40.9545
-// Next Case Study: 150×14, arrow 14px, rotate(-180deg), white
+// Outer section: 364px, pt-64px
+// Inner compo: 300px, rgba(1,71,176,0.10) bg, top+bottom borders 0.5px #808080/50%
+// Hover: whisk.png slides up from below (853.7×480.2, rotate -4.62deg, top:-126px left:-219px)
 function CaseStudyNavigation({ data }) {
+  const [hovered, setHovered] = React.useState(false);
+
   return (
     <section
       style={{
         width: "100%",
         height: "364px",
         paddingTop: "64px",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
+      {/* Inner compo — 300px, blue-tinted bg, top+bottom borders */}
       <div
         style={{
-          maxWidth: "1440px",
-          margin: "0 auto",
-          paddingLeft: "64px",
-          paddingRight: "64px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
+          width: "100%",
+          height: "300px",
+          background: "rgba(1, 71, 176, 0.10)",
+          borderTop: "0.5px solid rgba(128, 128, 128, 0.5)",
+          borderBottom: "0.5px solid rgba(128, 128, 128, 0.5)",
+          position: "relative",
+          overflow: "hidden",
+          cursor: "pointer",
         }}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
       >
-        {/* PixelWhisk group — 191×40.9545, gap 23.5px */}
+        {/* whisk.png — slides up from below on hover */}
+        {/* Figma: 853.7×480.2, top:-126px, left:-219.08px, rotate:-4.62deg */}
+        <img
+          src={whiskImage}
+          alt=""
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: "-80px",
+            left: "50%",
+            width: "853.7px",
+            height: "480.2px",
+            transform: hovered
+              ? "translateX(-50%) translateY(0) rotate(-4.62deg)"
+              : "translateX(-50%) translateY(100%) rotate(-4.62deg)",
+            transition: "transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)",
+            pointerEvents: "none",
+            userSelect: "none",
+          }}
+        />
+
+        {/* Content row — space-between, px 64px, vertically centred */}
         <div
           style={{
-            width: "191px",
-            height: "40.9545px",
+            position: "relative",
+            zIndex: 1,
+            width: "100%",
+            maxWidth: "1440px",
+            margin: "0 auto",
+            height: "100%",
             display: "flex",
             alignItems: "center",
-            gap: "23.5px",
+            justifyContent: "space-between",
+            paddingLeft: "64px",
+            paddingRight: "64px",
           }}
         >
-          <img
-            src="/favicon.svg"
-            alt="PixelWhisk"
+          {/* PixelWhisk group — 191×40.9545, gap 23.5px */}
+          <div
             style={{
-              width: "40.9512px",
+              width: "191px",
               height: "40.9545px",
+              display: "flex",
+              alignItems: "center",
+              gap: "23.5px",
               flexShrink: 0,
-              display: "block",
             }}
-          />
-          <span
-            className="font-['Darker_Grotesque'] font-medium text-white"
-            style={{ fontSize: "24px", lineHeight: "130%" }}
           >
-            {data.nextCaseStudy.name}
-          </span>
-        </div>
+            <img
+              src={pixelwhiskIcon}
+              alt="PixelWhisk"
+              style={{
+                width: "40.9512px",
+                height: "40.9545px",
+                flexShrink: 0,
+                display: "block",
+              }}
+            />
+            <span
+              className="font-['Darker_Grotesque'] font-medium text-white"
+              style={{ fontSize: "24px", lineHeight: "130%" }}
+            >
+              {data.nextCaseStudy.name}
+            </span>
+          </div>
 
-        {/* Next Case Study link — 150×14 */}
-        <Link
-          to={data.nextCaseStudy.path}
-          style={{
-            width: "150px",
-            height: "14px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-end",
-            gap: "8px",
-            fontSize: "18px",
-            lineHeight: "100%",
-            fontWeight: 500,
-            color: "white",
-            textDecoration: "none",
-          }}
-          className="font-['Darker_Grotesque']"
-        >
-          <span>Next Case Study</span>
-          {/* Arrow — white via CSS filter, points right for forward navigation */}
-          <img
-            src="/left_arrow.svg"
-            alt=""
+          {/* Next Case Study link — 150×14 */}
+          <Link
+            to={data.nextCaseStudy.path}
             style={{
-              width: "14px",
+              width: "150px",
+              height: "14px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              gap: "8px",
+              fontSize: "18px",
+              lineHeight: "100%",
+              fontWeight: 500,
+              color: "white",
+              textDecoration: "none",
               flexShrink: 0,
-              filter: "brightness(0) invert(1)",
             }}
-          />
-        </Link>
+            className="font-['Darker_Grotesque']"
+          >
+            <span>Next Case Study</span>
+            <img
+              src="/left_arrow.svg"
+              alt=""
+              style={{
+                width: "14px",
+                flexShrink: 0,
+                filter: "brightness(0) invert(1)",
+              }}
+            />
+          </Link>
+        </div>
       </div>
     </section>
   );
