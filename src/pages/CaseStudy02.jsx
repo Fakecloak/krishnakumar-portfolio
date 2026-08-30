@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import CaseStudyBackground from '../components/CaseStudyBackground';
+import caseStudyBg from '../assets/case-study-bg.png';
 
 /**
  * CaseStudy02 — Lil Big Things
@@ -10,12 +10,16 @@ import CaseStudyBackground from '../components/CaseStudyBackground';
  */
 export default function CaseStudy02() {
   return (
-    <div className="relative min-h-screen text-white font-sans flex flex-col" style={{ backgroundColor: '#000000', overflow: 'hidden' }}>
-      {/* Full-page background layer — static, covers entire page */}
-      <CaseStudyBackground />
+    <div className="relative" style={{ isolation: 'isolate' }}>
+      {/* Static background — absolutely positioned, behind all content, does not scroll independently */}
+      <img
+        src={caseStudyBg}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover"
+      />
 
-      {/* All page content sits above the background */}
-      <div className="relative flex flex-col flex-1" style={{ zIndex: 10 }}>
+      <div className="relative z-10">
         <Navbar />
         {/* Case study content goes here */}
         <div className="flex-1" />

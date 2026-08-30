@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CTASection from "../components/CTASection";
 import CaseStudyPage from "../components/case-study/CaseStudyPage";
-import CaseStudyBackground from "../components/CaseStudyBackground";
+import caseStudyBg from "../assets/case-study-bg.png";
 
 import heroImage from "../assets/case-study1/hero.png";
 import requirementsImage from "../assets/case-study1/requirements.svg";
@@ -167,21 +167,19 @@ const caseStudy01 = {
 
 export default function CaseStudy01() {
   return (
-    <div
-      className="relative min-h-screen text-white font-sans flex flex-col"
-      style={{ backgroundColor: '#000000' }}
-    >
-      {/* Full-page background layer */}
-      <CaseStudyBackground />
+    <div className="relative" style={{ isolation: 'isolate' }}>
+      {/* Static background — absolutely positioned, behind all content, does not scroll independently */}
+      <img
+        src={caseStudyBg}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover"
+      />
 
-      {/* All page content sits above the background */}
-      <div className="relative flex flex-col flex-1" style={{ zIndex: 10 }}>
+      <div className="relative z-10">
         <Navbar />
-
         <CaseStudyPage data={caseStudy01} />
-
         <CTASection />
-
         <Footer />
       </div>
     </div>

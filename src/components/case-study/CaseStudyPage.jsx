@@ -409,7 +409,6 @@ export default function CaseStudyPage({ data }) {
         position: "relative",
         width: "100%",
         minWidth: "1440px",
-        backgroundColor: "#000000",
       }}
     >
       {/* Two-column layout */}
