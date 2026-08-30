@@ -282,6 +282,8 @@ function CaseStudyContent({ data }) {
           </T>
         </div>
 
+        <Divider />
+
         {/* Credits — 784 × 150, gap 24px */}
         <div style={{ width: "784px", display: "flex", flexDirection: "column", gap: "24px" }}>
           <T className="text-[32px] font-semibold leading-[130%]">
@@ -308,7 +310,6 @@ function CaseStudyContent({ data }) {
         </div>
       </section>
 
-      <Divider />
     </main>
   );
 }
