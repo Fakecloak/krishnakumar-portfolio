@@ -128,7 +128,7 @@ export default function BeyondDesign() {
             Beyond product design
           </h2>
           <p className="text-[24px] font-['Darker_Grotesque'] leading-[130%] tracking-normal font-medium">
-            A collection of illustrations, posters and motion work from my creative practice.
+            A collection of illustrations and motion work from my creative practice.
           </p>
         </div>
 

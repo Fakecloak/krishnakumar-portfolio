@@ -49,7 +49,7 @@ export const motionClips = [
   '/motion/6.mp4',
 ];
 
-export const beyondDesignFilters = ['Motion', 'Illustrations', 'Posters'];
+export const beyondDesignFilters = ['Motion', 'Illustrations',];  //'Posters'
 
 // ── Skills ───────────────────────────────────
 export const skills = [

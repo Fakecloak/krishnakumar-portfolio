@@ -10,7 +10,7 @@ export default function Footer() {
 
         <div className='flex items-center gap-12 font-["Darker_Grotesque"] font-medium text-[20px] leading-[100%] tracking-normal'>
           <a
-            href="https://behance.net"
+            href="https://www.behance.net/krishnakumar567/projects"
             target="_blank"
             rel="noreferrer"
             className="underline underline-[#000000]/70 decoration-solid decoration-[1.5%] underline-offset-[25%]  text-[#000000]/70  hover:text-white transition-colors"
@@ -19,7 +19,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/krishnakumar19/"
             target="_blank"
             rel="noreferrer"
             className="underline underline-[#000000]/70 decoration-solid decoration-[1.5%] underline-offset-[25%] text-[#000000]/70  hover:text-white transition-colors"
