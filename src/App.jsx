@@ -138,8 +138,8 @@ export default function App() {
       />
 
       {/* ── Case Study Pages ─────────────────────── */}
-      <Route path="/case-study/pixelwhisk"    element={<CaseStudy01 />} />
-      <Route path="/case-study/lil-big-things" element={<CaseStudy02 />} />
+      <Route path="/case-study/lil-big-things" element={<CaseStudy01 />} />
+      <Route path="/case-study/pixelwhisk"     element={<CaseStudy02 />} />
 
     </Routes>
   );
