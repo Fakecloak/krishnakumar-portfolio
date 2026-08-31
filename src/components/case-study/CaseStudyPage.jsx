@@ -196,6 +196,7 @@ function ImageSection({ section }) {
         style={{
           width: "784px",
           height: `${section.imageHeight}px`,
+          border: "0.5px solid rgba(255, 255, 255, 0.7)",
           borderRadius: `${section.imageRadius ?? 6}px`,
           overflow: "hidden",
           flexShrink: 0,
