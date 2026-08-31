@@ -461,6 +461,7 @@ export default function CaseStudyPage({ data }) {
         position: "relative",
         width: "100%",
         minWidth: "1440px",
+        paddingBottom: "128px",
       }}
     >
       {/* Two-column layout */}
