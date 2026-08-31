@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import caseStudyBg from '../assets/case-study-bg.png';
 
 /**
  * CaseStudy02 — Lil Big Things
@@ -11,12 +10,19 @@ import caseStudyBg from '../assets/case-study-bg.png';
 export default function CaseStudy02() {
   return (
     <div className="relative" style={{ isolation: 'isolate' }}>
-      {/* Static background — absolutely positioned, behind all content, does not scroll independently */}
-      <img
-        src={caseStudyBg}
-        alt=""
+      {/* Static background — fixed to viewport, matches About section bg */}
+      <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover"
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 0,
+          pointerEvents: "none",
+          backgroundImage: "url('/site-bg.png')",
+          backgroundSize: "100% 100%",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+        }}
       />
 
       <div className="relative z-10">
