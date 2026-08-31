@@ -25,11 +25,11 @@ export default function WorkIntro() {
             marginBottom: '8px',
           }}
         >
-          Product Works
+          Product Design
         </div>
         
         <h2 className="font-['Darker_Grotesque'] font-bold text-[36px] sm:text-[44px] md:text-[56px] leading-none tracking-normal text-center">
-          From product thinking to polished interfaces
+          From ideation to polished interfaces
         </h2>
       </div>
     </section>
