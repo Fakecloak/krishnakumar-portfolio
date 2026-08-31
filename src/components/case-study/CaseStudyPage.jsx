@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import whiskImage from "../../assets/case-study1/whisk.png";
-import pixelwhiskIcon from "../../assets/case-study1/pixelwhisk.svg";
+import pixelwhiskLogo from "../../assets/logo/pixelwhisklogo.svg";
 
 
 // ─── Typography primitive ────────────────────────────────────────────────────
@@ -388,34 +388,17 @@ function CaseStudyNavigation({ data }) {
             paddingRight: "64px",
           }}
         >
-          {/* PixelWhisk group — 191×40.9545, gap 23.5px */}
-          <div
+          {/* PixelWhisk full logo */}
+          <img
+            src={pixelwhiskLogo}
+            alt="PixelWhisk"
             style={{
-              width: "191px",
-              height: "40.9545px",
-              display: "flex",
-              alignItems: "center",
-              gap: "23.5px",
+              height: "40px",
+              width: "auto",
               flexShrink: 0,
+              display: "block",
             }}
-          >
-            <img
-              src={pixelwhiskIcon}
-              alt="PixelWhisk"
-              style={{
-                width: "40.9512px",
-                height: "40.9545px",
-                flexShrink: 0,
-                display: "block",
-              }}
-            />
-            <span
-              className="font-['Darker_Grotesque'] font-medium text-white"
-              style={{ fontSize: "24px", lineHeight: "130%" }}
-            >
-              {data.nextCaseStudy.name}
-            </span>
-          </div>
+          />
 
           {/* Next Case Study link — 150×14 */}
           <Link
