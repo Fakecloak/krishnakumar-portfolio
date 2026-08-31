@@ -1,5 +1,5 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import BackgroundGrid from './components/BackgroundGrid';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -41,10 +41,36 @@ const productBgStyle = {
   backgroundRepeat: 'no-repeat',
 };
 
+// Scrolls to the hash element after every navigation, or to top if no hash.
+function ScrollToHash() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      // Give the DOM time to paint the new route before scrolling
+      const id = hash.slice(1);
+      const attempt = (tries = 0) => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (tries < 10) {
+          setTimeout(() => attempt(tries + 1), 50);
+        }
+      };
+      attempt();
+    } else {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
+
 export default function App() {
   return (
-    <Routes>
-
+    <>
+      <ScrollToHash />
+      <Routes>
       {/* ── Homepage ─────────────────────────────── */}
       <Route
         path="/"
@@ -75,7 +101,7 @@ export default function App() {
                   ZONE A2 — PRODUCT / WORK SECTION
                   product-bg.png: blue glow at top → black.
                   ══════════════════════════════════════════ */}
-              <div className="relative overflow-hidden">
+              <div id="work" className="relative overflow-hidden">
                 <div
                   aria-hidden="true"
                   className="absolute inset-0 pointer-events-none"
@@ -138,9 +164,16 @@ export default function App() {
       />
 
       {/* ── Case Study Pages ─────────────────────── */}
+<<<<<<< HEAD
       <Route path="/case-study/lil-big-things" element={<CaseStudy01 />} />
       <Route path="/case-study/pixelwhisk"     element={<CaseStudy02 />} />
 
     </Routes>
+=======
+      <Route path="/case-study/pixelwhisk"    element={<CaseStudy01 />} />
+      <Route path="/case-study/lil-big-things" element={<CaseStudy02 />} />
+      </Routes>
+    </>
+>>>>>>> CS1
   );
 }
