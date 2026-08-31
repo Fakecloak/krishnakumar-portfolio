@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import whiskImage from "../../assets/case-study1/whisk.png";
 import pixelwhiskLogo from "../../assets/logo/pixelwhisklogo.svg";
 
 
@@ -322,8 +321,8 @@ function CaseStudyContent({ data }) {
 
 // ─── Case Study Navigation ────────────────────────────────────────────────────
 // Outer section: 364px, pt-64px
-// Inner compo: 300px, rgba(1,71,176,0.10) bg, top+bottom borders 0.5px #808080/50%
-// Hover: whisk.png slides up from below (853.7×480.2, rotate -4.62deg, top:-126px left:-219px)
+// Inner compo: 300px, rgba(1,71,176,0.10) bg, top+bottom borders 0.5px #FFFFFF/50%
+// Hover: laptop scene1.png slides up from below (442.59×297.51px, rotate -4.32deg, centered)
 function CaseStudyNavigation({ data }) {
   const [hovered, setHovered] = React.useState(false);
 
@@ -337,14 +336,14 @@ function CaseStudyNavigation({ data }) {
         overflow: "hidden",
       }}
     >
-      {/* Inner compo — 300px, blue-tinted bg, top+bottom borders */}
+      {/* Inner compo — 300px, white-tinted bg, top+bottom borders */}
       <div
         style={{
           width: "100%",
           height: "300px",
           background: "rgba(1, 71, 176, 0.10)",
-          borderTop: "0.5px solid rgba(128, 128, 128, 0.5)",
-          borderBottom: "0.5px solid rgba(128, 128, 128, 0.5)",
+          borderTop: "0.5px solid rgba(255, 255, 255, 0.50)",
+          borderBottom: "0.5px solid rgba(255, 255, 255, 0.50)",
           position: "relative",
           overflow: "hidden",
           cursor: "pointer",
@@ -352,21 +351,21 @@ function CaseStudyNavigation({ data }) {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        {/* whisk.png — slides up from below on hover */}
-        {/* Figma: 853.7×480.2, top:-126px, left:-219.08px, rotate:-4.62deg */}
+        {/* Laptop mockup — slides up from below on hover */}
+        {/* Figma: 442.59×297.51px, rotate:-4.32deg, centered horizontally */}
         <img
-          src={whiskImage}
+          src="/laptop/scene1.png"
           alt=""
           aria-hidden="true"
           style={{
             position: "absolute",
-            top: "-80px",
+            bottom: "-20px",
             left: "50%",
-            width: "853.7px",
-            height: "480.2px",
+            width: "442.59px",
+            height: "297.51px",
             transform: hovered
-              ? "translateX(-50%) translateY(0) rotate(-4.62deg)"
-              : "translateX(-50%) translateY(100%) rotate(-4.62deg)",
+              ? "translateX(-50%) translateY(0) rotate(-4.32deg)"
+              : "translateX(-50%) translateY(110%) rotate(-4.32deg)",
             transition: "transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)",
             pointerEvents: "none",
             userSelect: "none",
