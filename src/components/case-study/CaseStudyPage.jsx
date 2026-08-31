@@ -5,9 +5,9 @@ import pixelwhiskIcon from "../../assets/case-study1/pixelwhisk.svg";
 
 
 // ─── Typography primitive ────────────────────────────────────────────────────
-function T({ children, className = "" }) {
+function T({ children, className = "", style }) {
   return (
-    <p className={`m-0 font-['Darker_Grotesque'] text-white ${className}`}>
+    <p className={`m-0 font-['Darker_Grotesque'] text-white ${className}`} style={style}>
       {children}
     </p>
   );
@@ -151,28 +151,30 @@ function Sidebar({ data }) {
 }
 
 // ─── Section text block ───────────────────────────────────────────────────────
-// 784 × 242 text container, flex-col, gap 24px
+// Heading → subheading: 24px | subheading → paragraphs: 12px | p → p: 8px
 function SectionText({ section }) {
   return (
-    <div style={{ width: "784px", display: "flex", flexDirection: "column", gap: "24px" }}>
-      {/* Title + subtitle stacked */}
-      <div className="flex flex-col">
-        <T className="text-[32px] font-semibold leading-[130%]">
-          {section.title}
-        </T>
-        <T className="text-[24px] font-medium leading-[130%]">
-          {section.subtitle}
-        </T>
-      </div>
+    <div style={{ width: "784px", display: "flex", flexDirection: "column" }}>
+      {/* Main heading */}
+      <T className="text-[32px] font-semibold leading-[130%]">
+        {section.title}
+      </T>
 
-      {/* Paragraphs */}
-      <div className="flex flex-col" style={{ gap: "12px" }}>
-        {section.paragraphs.map((p, i) => (
-          <T key={i} className="text-[20px] font-normal leading-[125%]">
-            {p}
-          </T>
-        ))}
-      </div>
+      {/* Subheading — 24px below heading */}
+      <T className="text-[24px] font-medium leading-[130%]" style={{ marginTop: "24px" }}>
+        {section.subtitle}
+      </T>
+
+      {/* Paragraphs — first is 12px below subheading, rest are 8px apart */}
+      {section.paragraphs.map((p, i) => (
+        <T
+          key={i}
+          className="text-[20px] font-normal leading-[125%]"
+          style={{ marginTop: i === 0 ? "12px" : "8px" }}
+        >
+          {p}
+        </T>
+      ))}
     </div>
   );
 }
@@ -277,10 +279,10 @@ function CaseStudyContent({ data }) {
           <T className="text-[32px] font-semibold leading-[130%]">
             {data.outcome.title}
           </T>
-          <T className="text-[24px] font-medium leading-[130%]">
+          <T className="text-[24px] font-medium leading-[130%]" style={{ marginTop: "24px" }}>
             {data.outcome.subtitle}
           </T>
-          <T className="text-[20px] font-normal leading-[125%]">
+          <T className="text-[20px] font-normal leading-[125%]" style={{ marginTop: "12px" }}>
             {data.outcome.paragraph}
           </T>
         </div>
