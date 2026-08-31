@@ -322,8 +322,8 @@ function CaseStudyContent({ data }) {
 
 // ─── Case Study Navigation ────────────────────────────────────────────────────
 // Outer section: 364px, pt-64px
-// Inner compo: 300px, rgba(1,71,176,0.10) bg, top+bottom borders 0.5px #FFFFFF/50%
-// Hover: laptop scene1.png slides up from below (442.59×297.51px, rotate -4.32deg, centered)
+// Whole inner 300px is a Link to next case study
+// Hover: bg transitions blue→white tint, laptop slides up, "Next Case Study" fades to 10%
 function CaseStudyNavigation({ data }) {
   const [hovered, setHovered] = React.useState(false);
 
@@ -337,38 +337,42 @@ function CaseStudyNavigation({ data }) {
         overflow: "hidden",
       }}
     >
-      {/* Inner compo — 300px, white-tinted bg, top+bottom borders */}
-      <div
+      {/* Entire 300px inner area is a single Link */}
+      <Link
+        to={data.nextCaseStudy.path}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
         style={{
+          display: "block",
+          textDecoration: "none",
           width: "100%",
           height: "300px",
-          background: "rgba(1, 71, 176, 0.10)",
+          background: hovered ? "rgba(255, 255, 255, 0.10)" : "rgba(1, 71, 176, 0.10)",
           borderTop: "0.5px solid rgba(255, 255, 255, 0.50)",
           borderBottom: "0.5px solid rgba(255, 255, 255, 0.50)",
+          transition: "background 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
           position: "relative",
           overflow: "hidden",
           cursor: "pointer",
         }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
       >
         {/* Laptop mockup — slides up from below on hover */}
-        {/* Figma: 442.59×297.51px, rotate:-4.32deg, centered horizontally */}
+        {/* Figma: 442.59x297.51px, rotate: 4.32deg, centered horizontally */}
         <img
           src="/laptop/scene1.png"
           alt=""
           aria-hidden="true"
           style={{
             position: "absolute",
-            bottom: "-20px",
+            bottom: "-25px",
             left: "50%",
             width: "442.59px",
-            height: "297.51px",
+            height: "297.51px", 
             borderRadius: "6px",
             transform: hovered
               ? "translateX(-50%) translateY(0) rotate(4.32deg)"
               : "translateX(-50%) translateY(110%) rotate(4.32deg)",
-            transition: "transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)",
+            transition: "transform 0.3s ease-in-out",
             pointerEvents: "none",
             userSelect: "none",
           }}
@@ -402,26 +406,22 @@ function CaseStudyNavigation({ data }) {
             }}
           />
 
-          {/* Next Case Study link — 150×14 */}
-          <Link
-            to={data.nextCaseStudy.path}
+          {/* Next Case Study label — fades to 10% on section hover */}
+          <div
             style={{
-              width: "150px",
-              height: "14px",
               display: "flex",
               alignItems: "center",
               justifyContent: "flex-end",
               gap: "8px",
-              fontSize: "18px",
-              lineHeight: "100%",
-              fontWeight: 500,
-              color: "white",
-              textDecoration: "none",
               flexShrink: 0,
+              color: hovered ? "rgba(255,255,255,1)" : "rgba(255,255,255,0.70)",
+              transition: "color 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
             }}
             className="font-['Darker_Grotesque']"
           >
-            <span>Next Case Study</span>
+            <span style={{ fontSize: "18px", lineHeight: "100%", fontWeight: 500 }}>
+              Next Case Study
+            </span>
             <img
               src="/left_arrow.svg"
               alt=""
@@ -429,11 +429,13 @@ function CaseStudyNavigation({ data }) {
                 width: "14px",
                 flexShrink: 0,
                 filter: "brightness(0) invert(1)",
+                opacity: hovered ? 1 : 0.7,
+                transition: "opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
               }}
             />
-          </Link>
+          </div>
         </div>
-      </div>
+      </Link>
     </section>
   );
 }
