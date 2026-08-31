@@ -57,10 +57,11 @@ function Sidebar({ data }) {
           {/* Back link */}
           <Link
             to="/"
-            style={{ fontSize: "18px", fontWeight: 400, lineHeight: "130%", color: "rgba(255,255,255,0.7)", textDecoration: "none" }}
-            className="font-['Darker_Grotesque'] w-fit block"
+            style={{ fontSize: "18px", fontWeight: 400, lineHeight: "130%", color: "rgba(255,255,255,0.7)", textDecoration: "none", display: "flex", alignItems: "center", gap: "8px" }}
+            className="font-['Darker_Grotesque'] w-fit"
           >
-            ← &nbsp;Homepage
+            <img src="/right_arrow.svg" alt="" style={{ width: "15px", flexShrink: 0 }} />
+            Homepage
           </Link>
 
           {/* Title + description block */}
@@ -363,9 +364,10 @@ function CaseStudyNavigation({ data }) {
             left: "50%",
             width: "442.59px",
             height: "297.51px",
+            borderRadius: "6px",
             transform: hovered
-              ? "translateX(-50%) translateY(0) rotate(-4.32deg)"
-              : "translateX(-50%) translateY(110%) rotate(-4.32deg)",
+              ? "translateX(-50%) translateY(0) rotate(4.32deg)"
+              : "translateX(-50%) translateY(110%) rotate(4.32deg)",
             transition: "transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)",
             pointerEvents: "none",
             userSelect: "none",
