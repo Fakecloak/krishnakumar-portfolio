@@ -15,6 +15,8 @@ const caseStudy01 = {
 
   description: "Making work progress clear for teams and customers.",
 
+  backAnchor: "/#case-study-pixelwhisk",
+
   heroImage,
 
   sidebar: {

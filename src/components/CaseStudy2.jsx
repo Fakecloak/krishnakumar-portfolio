@@ -10,7 +10,7 @@ import { caseStudy2, assets } from '../constants/portfolioData';
 
 export default function CaseStudy2() {
   return (
-    <section className="w-full max-w-[1440px] mx-auto px-[64px] pt-[64px] pb-[128px]">
+    <section id="case-study-lil-big-things" className="w-full max-w-[1440px] mx-auto px-[64px] pt-[64px] pb-[128px]">
 
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
 

@@ -56,7 +56,7 @@ function Sidebar({ data }) {
         <div style={{ width: "400px", display: "flex", flexDirection: "column", gap: "48px" }}>
           {/* Back link */}
           <Link
-            to="/"
+            to={data.backAnchor || "/"}
             style={{ fontSize: "18px", fontWeight: 400, lineHeight: "130%", color: "rgba(255,255,255,0.7)", textDecoration: "none", display: "flex", alignItems: "center", gap: "8px" }}
             className="font-['Darker_Grotesque'] w-fit"
           >
