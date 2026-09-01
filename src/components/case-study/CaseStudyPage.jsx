@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import pixelwhiskLogo from "../../assets/logo/pixelwhisklogo.svg";
-
+import lilbigthingsLogo from "../../assets/logo/lilbigthings.svg";
+import caseStudy0001Image from "../../assets/case-study2/0001.png";
 
 // ─── Typography primitive ────────────────────────────────────────────────────
 function T({ children, className = "", style }) {
@@ -13,7 +14,6 @@ function T({ children, className = "", style }) {
 }
 
 // ─── Universal divider — 0.5px solid white 50% opacity ──────────────────────
-// 48px spacing above and below is handled by the parent's gap-[48px].
 function Divider() {
   return (
     <div
@@ -29,11 +29,6 @@ function Divider() {
 }
 
 // ─── Sidebar ──────────────────────────────────────────────────────────────────
-// 464px wide, sticky, full viewport height
-// Content: 400px wide, pl-64px, pt-128px
-// Top info container: 400×189, gap 48px
-// Divider: 400px, 0.5px #808080, 32px above + 32px below
-// Lower container: 400×317, flex-col, gap 24px
 function Sidebar({ data }) {
   const { sidebar } = data;
 
@@ -151,7 +146,6 @@ function Sidebar({ data }) {
 }
 
 // ─── Section text block ───────────────────────────────────────────────────────
-// Heading → subheading: 24px | subheading → paragraphs: 12px | p → p: 8px
 function SectionText({ section }) {
   return (
     <div style={{ width: "784px", display: "flex", flexDirection: "column" }}>
@@ -187,7 +181,7 @@ function ImageSection({ section }) {
         width: "784px",
         display: "flex",
         flexDirection: "column",
-        gap: "48px",
+        gap: `${section.imageGap ?? 48}px`,
       }}
     >
       <SectionText section={section} />
@@ -196,8 +190,10 @@ function ImageSection({ section }) {
         style={{
           width: "784px",
           height: `${section.imageHeight}px`,
-          border: "0.5px solid rgba(255, 255, 255, 0.7)",
+          border: section.imageBorder ?? "0.5px solid rgba(255, 255, 255, 0.7)",
           borderRadius: `${section.imageRadius ?? 6}px`,
+          backgroundColor: section.imageBg ?? "transparent",
+          position: "relative",
           overflow: "hidden",
           flexShrink: 0,
         }}
@@ -205,7 +201,14 @@ function ImageSection({ section }) {
         <img
           src={section.image}
           alt=""
-          style={{ display: "block", width: "100%", height: "100%", objectFit: "cover" }}
+          style={
+            section.innerImageStyle ?? {
+              display: "block",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }
+          }
         />
       </div>
     </section>
@@ -222,8 +225,6 @@ function TextSection({ section }) {
 }
 
 // ─── Right scrollable content ─────────────────────────────────────────────────
-// 976px wide, padding: top 128 right 64 bottom 64 left 128
-// Content 784px, main gap 48px
 function CaseStudyContent({ data }) {
   return (
     <main
@@ -242,19 +243,31 @@ function CaseStudyContent({ data }) {
       {/* Hero — 784 × 527 */}
       <div
         style={{
-          width: "784px",
+          width: "100%",
+          maxWidth: "784px",
           height: "527px",
+          aspectRatio: "784 / 527",
           border: "0.5px solid rgba(255,255,255,0.7)",
           borderRadius: "6px",
           overflow: "hidden",
           flexShrink: 0,
         }}
       >
-        <img
-          src={data.heroImage}
-          alt=""
-          style={{ display: "block", width: "100%", height: "100%", objectFit: "cover" }}
-        />
+        {data.heroVideoUrl ? (
+          <iframe
+            src={data.heroVideoUrl}
+            title={data.title || "Hero video"}
+            style={{ display: "block", width: "100%", height: "100%", border: "none", opacity: 1 }}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        ) : (
+          <img
+            src={data.heroImage}
+            alt=""
+            style={{ display: "block", width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        )}
       </div>
 
       <Divider />
@@ -276,19 +289,23 @@ function CaseStudyContent({ data }) {
       {/* Outcome + Credits — 784 × 184, gap 48px */}
       <section style={{ width: "784px", display: "flex", flexDirection: "column", gap: "48px" }}>
         {/* Outcome */}
-        <div className="flex flex-col">
-          <T className="text-[32px] font-semibold leading-[130%]">
-            {data.outcome.title}
-          </T>
-          <T className="text-[24px] font-medium leading-[130%]" style={{ marginTop: "24px" }}>
-            {data.outcome.subtitle}
-          </T>
-          <T className="text-[20px] font-normal leading-[125%]" style={{ marginTop: "12px" }}>
-            {data.outcome.paragraph}
-          </T>
-        </div>
+        {data.outcome && (
+          <>
+            <div className="flex flex-col">
+              <T className="text-[32px] font-semibold leading-[130%]">
+                {data.outcome.title}
+              </T>
+              <T className="text-[24px] font-medium leading-[130%]" style={{ marginTop: "24px" }}>
+                {data.outcome.subtitle}
+              </T>
+              <T className="text-[20px] font-normal leading-[125%]" style={{ marginTop: "12px" }}>
+                {data.outcome.paragraph}
+              </T>
+            </div>
 
-        <Divider />
+            <Divider />
+          </>
+        )}
 
         {/* Credits — 784 × 150, gap 24px */}
         <div style={{ width: "784px", display: "flex", flexDirection: "column", gap: "24px" }}>
@@ -321,9 +338,6 @@ function CaseStudyContent({ data }) {
 }
 
 // ─── Case Study Navigation ────────────────────────────────────────────────────
-// Outer section: 364px, pt-64px
-// Whole inner 300px is a Link to next case study
-// Hover: bg transitions blue→white tint, laptop slides up, "Next Case Study" fades to 10%
 function CaseStudyNavigation({ data }) {
   const [hovered, setHovered] = React.useState(false);
 
@@ -357,9 +371,12 @@ function CaseStudyNavigation({ data }) {
         }}
       >
         {/* Laptop mockup — slides up from below on hover */}
-        {/* Figma: 442.59x297.51px, rotate: 4.32deg, centered horizontally */}
         <img
-          src="/laptop/scene1.png"
+          src={
+            data.nextCaseStudy?.laptopImage ||
+            data.nextCaseStudy?.animationImage ||
+            (data.title === "Lil Big Things" ? caseStudy0001Image : "/laptop/scene1.png")
+          }
           alt=""
           aria-hidden="true"
           style={{
@@ -394,17 +411,34 @@ function CaseStudyNavigation({ data }) {
             paddingRight: "64px",
           }}
         >
-          {/* PixelWhisk full logo */}
-          <img
-            src={pixelwhiskLogo}
-            alt="PixelWhisk"
-            style={{
-              height: "40px",
-              width: "auto",
-              flexShrink: 0,
-              display: "block",
-            }}
-          />
+          {/* Next case study logo / title */}
+          {data.nextCaseStudy?.name === "PixelWhisk" ? (
+            <img
+              src={pixelwhiskLogo}
+              alt="PixelWhisk"
+              style={{
+                height: "40px",
+                width: "auto",
+                flexShrink: 0,
+                display: "block",
+              }}
+            />
+          ) : data.nextCaseStudy?.name === "Lil Big Things" ? (
+            <img
+              src={lilbigthingsLogo}
+              alt="Lil Big Things"
+              style={{
+                height: "40px",
+                width: "auto",
+                flexShrink: 0,
+                display: "block",
+              }}
+            />
+          ) : (
+            <T className="text-[32px] font-bold leading-[130%]">
+              {data.nextCaseStudy?.name}
+            </T>
+          )}
 
           {/* Next Case Study label — fades to 10% on section hover */}
           <div
