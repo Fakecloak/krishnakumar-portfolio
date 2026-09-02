@@ -16,20 +16,20 @@ export default function Hero() {
 
 
       {/* Vertical Guideline Accents (Matching Figma) */}
-      <div className="absolute inset-0 pointer-events-none z-10 flex justify-center">
-        <div className="w-full max-w-[1440px] h-full relative">
+      {/* <div className="absolute inset-0 pointer-events-none z-10 flex justify-center">
+        <div className="w-full max-w-[1440px] h-full relative"> */}
           {/* Left Vertical Lines */}
-          <div className="absolute top-0 bottom-0 left-[48px] w-[1px] bg-white/[0.04]" />
-          <div className="absolute top-0 bottom-0 left-[64px] w-[1px] bg-white/[0.04]" />
+          {/* <div className="absolute top-0 bottom-0 left-[48px] w-[1px] bg-white/[0.04]" />
+          <div className="absolute top-0 bottom-0 left-[64px] w-[1px] bg-white/[0.04]" /> */}
 
           {/* Center Column Vertical Line */}
-          <div className="absolute top-0 bottom-0 left-[58%] w-[1px] bg-white/[0.04] hidden lg:block" />
+          {/* <div className="absolute top-0 bottom-0 left-[58%] w-[1px] bg-white/[0.04] hidden lg:block" /> */}
 
           {/* Right Vertical Lines */}
-          <div className="absolute top-0 bottom-0 right-[64px] w-[1px] bg-white/[0.04]" />
+          {/* <div className="absolute top-0 bottom-0 right-[64px] w-[1px] bg-white/[0.04]" />
           <div className="absolute top-0 bottom-0 right-[48px] w-[1px] bg-white/[0.04]" />
         </div>
-      </div>
+      </div> */}
 
       {/* Main Content Area */}
       <div className="relative z-20 w-full max-w-[1440px] mx-auto px-6 md:px-16 pt-16 md:pt-24 pb-12 my-auto">

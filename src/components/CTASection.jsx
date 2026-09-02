@@ -50,11 +50,11 @@ export default function CTASection() {
 
             <a
               href="https://www.linkedin.com/in/krishnakumar19/"
-              target="_blank"
+              target="_blank" 
               rel="noreferrer"
               className="inline-flex items-center justify-center  h-[62px] gap-3 p-6 rounded-[45px] bg-white text-black hover:bg-[#999999] transition-all text-[24px] font-medium shadow-lg group shadow-white/5"
             >
-              <span className='text-[24px] font-["Darker_Grotesque"] font-medium leading-[120%] tracking-normal text=[#1B1B1B] '>LinkedIn</span>
+              <span className='text-[24px] font-["Darker_Grotesque"] font-medium tracking-normal text=[#1B1B1B] '>LinkedIn</span>
               <span className="transition-transform group-hover:translate-x-1 hover:-translate-y-1 ">
                 <img src={assets.sideArrow} alt="sidearrow" />
               </span>

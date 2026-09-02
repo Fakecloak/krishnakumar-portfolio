@@ -9,11 +9,11 @@ export default function PortraitMockup({
 
       {/* Subtle Inner Glow */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-40"
-        style={{
-          background:
-            'radial-gradient(circle at 50% 60%, rgba(59, 130, 246, 0.2) 0%, transparent 80%)'
-        }}
+        className="absolute inset-0 pointer-events-none opacity-40 bg-white/5"
+        // style={{
+        //   background:
+        //     'radial-gradient(circle at 50% 60%, rgba(59, 130, 246, 0.2) 0%, transparent 80%)'
+        // }}
       /> 
 
       <img

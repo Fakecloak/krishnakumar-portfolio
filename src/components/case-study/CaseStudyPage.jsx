@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import pixelwhiskLogo from "../../assets/logo/pixelwhisklogo.svg";
 import lilbigthingsLogo from "../../assets/logo/lilbigthings.svg";
 import caseStudy0001Image from "../../assets/case-study2/0001.png";
+import whiskImage from "../../assets/case-study1/whisk.png";
+
+
+
 
 // ─── Typography primitive ────────────────────────────────────────────────────
 function T({ children, className = "", style }) {
@@ -341,6 +345,28 @@ function CaseStudyContent({ data }) {
 function CaseStudyNavigation({ data }) {
   const [hovered, setHovered] = React.useState(false);
 
+  const laptopConfig = {
+    "Lil Big Things": {
+      src: data.nextCaseStudy?.animationImage || caseStudy0001Image,
+      width: "442.59px",
+      height: "297.51px",
+      borderRadius: "6px",
+      rotation: "4.32deg",
+      bottom: "-25px",
+    },
+
+    "PixelWhisk": {
+      src: data.nextCaseStudy?.animationImage || whiskImage,
+      width: "442.59px",
+      height: "297.51px",
+      borderRadius: "6px",
+      rotation: "4.32deg",
+      bottom: "-25px",
+    },
+  };
+
+  const config = laptopConfig[data.nextCaseStudy?.name];
+
   return (
     <section
       style={{
@@ -371,29 +397,31 @@ function CaseStudyNavigation({ data }) {
         }}
       >
         {/* Laptop mockup — slides up from below on hover */}
-        <img
-          src={
-            data.nextCaseStudy?.laptopImage ||
-            data.nextCaseStudy?.animationImage ||
-            (data.title === "Lil Big Things" ? caseStudy0001Image : "/laptop/scene1.png")
-          }
-          alt=""
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            bottom: "-25px",
-            left: "50%",
-            width: "442.59px",
-            height: "297.51px", 
-            borderRadius: "6px",
-            transform: hovered
-              ? "translateX(-50%) translateY(0) rotate(4.32deg)"
-              : "translateX(-50%) translateY(110%) rotate(4.32deg)",
-            transition: "transform 0.3s ease-in-out",
-            pointerEvents: "none",
-            userSelect: "none",
-          }}
-        />
+        {config?.src && (
+          <img
+            src={config.src}
+            alt=""
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              bottom: config.bottom || "-25px",
+              left: "50%",
+              width: config.width,
+              height: config.height,
+              borderRadius: config.borderRadius,
+              display: "block",
+
+              transform: hovered
+                ? `translateX(-50%) translateY(0) rotate(${config.rotation})`
+                : `translateX(-50%) translateY(125%) rotate(${config.rotation})`,
+
+              transformOrigin: "center center",
+              transition: "transform 0.3s ease-in-out",
+              pointerEvents: "none",
+              userSelect: "none",
+            }}
+          />
+        )}
 
         {/* Content row — space-between, px 64px, vertically centred */}
         <div

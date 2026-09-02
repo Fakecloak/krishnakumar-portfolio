@@ -9,6 +9,7 @@ import exploringFlowImage from "../assets/case-study2/Frame_2147258296.svg";
 import refiningExperienceImage from "../assets/case-study2/Frame_2147258297.svg";
 import finalProductImage from "../assets/case-study2/Frame_2147258298.svg";
 import buildingFoundationImage from "../assets/case-study2/Frame_2147258300.svg";
+import caseStudy0001Image from "../assets/case-study2/0001.png";
 
 const caseStudy02 = {
   title: "PixelWhisk",
@@ -17,7 +18,7 @@ const caseStudy02 = {
 
   backAnchor: "/#case-study-pixelwhisk",
 
-  heroVideoUrl: "https://www.youtube.com/embed/s_fWEqYIYx8?autoplay=1&controls=1",
+  heroVideoUrl: "https://www.youtube.com/embed/HqvARXk1TcU?autoplay=1&controls=1", 
 
   sidebar: {
     role: {
@@ -190,6 +191,7 @@ const caseStudy02 = {
   nextCaseStudy: {
     name: "Lil Big Things",
     path: "/case-study/lil-big-things",
+    animationImage: caseStudy0001Image,
   },
 };
 
