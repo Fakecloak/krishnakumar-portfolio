@@ -7,7 +7,7 @@ import CaseStudyPage from "../components/case-study/CaseStudyPage";
 import productImage from "../assets/case-study2/product.svg";
 import exploringFlowImage from "../assets/case-study2/Frame_2147258296.svg";
 import refiningExperienceImage from "../assets/case-study2/Frame_2147258297.svg";
-import finalProductImage from "../assets/case-study2/Frame_2147258298.svg";
+import finalProductImage from "../assets/case-study2/Frame_2147258298.png";
 import buildingFoundationImage from "../assets/case-study2/Frame_2147258300.svg";
 import caseStudy0001Image from "../assets/case-study2/0001.png";
 

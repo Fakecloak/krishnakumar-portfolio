@@ -38,7 +38,7 @@ export default function CTASection() {
           {/* Right Column: CTA Buttons */}
           <div className="flex items-center gap-6 flex-wrap">
             <a
-              href="/resume/resume.pdf"
+              href="/resume/Krishnakumar_Resume.pdf"
               download
               className="inline-flex items-center justify-center h-[64px] gap-3 px-6 rounded-[45px] border border-white text-[24px] leading-[120%] tracking-normal font-medium text-white hover:bg-white/10 transition-all group"
             >

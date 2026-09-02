@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import pixelwhiskLogo from "../../assets/logo/pixelwhisklogo.svg";
 import lilbigthingsLogo from "../../assets/logo/lilbigthings.svg";
 import caseStudy0001Image from "../../assets/case-study2/0001.png";
-import whiskImage from "../../assets/case-study1/whisk.png";
+import whiskImage0002Image from "../../assets/case-study1/0002.png";   
 
 
 
@@ -356,7 +356,7 @@ function CaseStudyNavigation({ data }) {
     },
 
     "PixelWhisk": {
-      src: data.nextCaseStudy?.animationImage || whiskImage,
+      src: data.nextCaseStudy?.animationImage || whiskImage0002Image,
       width: "442.59px",
       height: "297.51px",
       borderRadius: "6px",

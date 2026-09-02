@@ -10,7 +10,7 @@ import wireframesImage from "../assets/case-study1/wireframes.png";
 import finalScreensImage from "../assets/case-study1/final-screens.svg";
 import designSystemImage from "../assets/case-study1/design-system.svg";
 
-import whiskImage from "../assets/case-study1/whisk.png";
+import whiskImage0002Image from "../assets/case-study1/0002.png";
 
 const caseStudy01 = {
   title: "Lil Big Things",
@@ -165,7 +165,7 @@ const caseStudy01 = {
   nextCaseStudy: {
     name: "PixelWhisk",
     path: "/case-study/pixelwhisk",
-    animationImage: whiskImage,
+    animationImage: whiskImage0002Image,
   },
 };
 
