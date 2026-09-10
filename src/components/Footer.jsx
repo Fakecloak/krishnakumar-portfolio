@@ -3,12 +3,12 @@ import React from 'react';
 export default function Footer() {
   return (
     <footer className="w-full relative z-10 border-t border-[0.5px] border-white/50">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-16 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-base sm:text-lg font-medium" style={{ color: '#000000B2' }}>
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16 py-6 sm:py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-base sm:text-lg font-medium" style={{ color: '#000000B2' }}>
         <div>Designed by
           <span className="font-['Darker_Grotesque'] font-medium text-[20px] leading-[100%] tracking-normal text-[#000000B2]"> Krishnakumar K</span>
         </div>
 
-        <div className='flex items-center gap-12 font-["Darker_Grotesque"] font-medium text-[20px] leading-[100%] tracking-normal'>
+        <div className='flex items-center gap-6 sm:gap-12 font-["Darker_Grotesque"] font-medium text-[20px] leading-[100%] tracking-normal flex-wrap justify-center'>
           <a
             href="https://www.behance.net/krishnakumar567/projects"
             target="_blank"

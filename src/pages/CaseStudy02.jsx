@@ -90,11 +90,12 @@ const caseStudy02 = {
       imageBorder: "0.5px solid rgba(255, 255, 255, 0.7)",
       innerImageStyle: {
         position: "absolute",
-        top: "23px",
-        left: "20px",
-        width: "744px",
-        height: "550px",
+        top: "3.86%",
+        left: "2.55%",
+        width: "94.9%",
+        height: "92.28%",
         display: "block",
+        objectFit: "contain",
       },
       sectionHeight: 886,
     },
@@ -197,7 +198,7 @@ const caseStudy02 = {
 
 export default function CaseStudy02() {
   return (
-    <div className="relative" style={{ isolation: 'isolate' }}>
+    <div className="relative w-full overflow-hidden" style={{ isolation: 'isolate' }}>
       {/* Static background — fixed to viewport, matches About section bg */}
       <div
         aria-hidden="true"

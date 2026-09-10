@@ -11,7 +11,7 @@ export default function WorkIntro() {
       className="relative z-10 w-full overflow-hidden  text-center scroll-mt-[75px]"
       style={{ backgroundColor: 'transparent' }}
     >
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto  pt-[128px] pb-[84px]">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16 pt-[64px] pb-[40px] md:pt-[128px] md:pb-[84px]">
         <div
           style={{
             color: '#FFFFFFB2',
@@ -28,7 +28,7 @@ export default function WorkIntro() {
           Product Design
         </div>
         
-        <h2 className="font-['Darker_Grotesque'] font-bold text-[36px] sm:text-[44px] md:text-[56px] leading-none tracking-normal text-center">
+        <h2 className="font-['Darker_Grotesque'] font-bold text-[32px] sm:text-[44px] md:text-[56px] leading-[110%] sm:leading-none tracking-normal text-center">
           From ideation to polished interfaces
         </h2>
       </div>

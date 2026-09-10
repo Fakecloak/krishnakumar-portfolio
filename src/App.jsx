@@ -86,13 +86,13 @@ export default function App() {
                   hero-bg.png covers Navbar + Hero together.
                   Height locked to 916px — Figma spec.
                   ══════════════════════════════════════════ */}
-              <div className="relative overflow-hidden" style={{ minHeight: '916px' }}>
+              <div className="relative overflow-hidden min-h-[100svh] lg:min-h-[916px]">
                 <div
                   aria-hidden="true"
                   className="absolute inset-0 pointer-events-none"
                   style={heroBgStyle}
                 />
-                <div className="relative z-10 flex flex-col" style={{ minHeight: '916px' }}>
+                <div className="relative z-10 flex flex-col min-h-[100svh] lg:min-h-[916px]">
                   <Hero />
                 </div>
               </div>
@@ -116,7 +116,7 @@ export default function App() {
                   <CaseStudy1 />
 
                   {/* Divider between case studies */}
-                  <div className="w-full max-w-[1440px] mx-auto px-6 md:px-16">
+                  <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16">
                     <div className=" border-white/50 border-t-[0.5px]" />
                   </div>
 
@@ -133,7 +133,7 @@ export default function App() {
               <div style={{ backgroundColor: '#000000' }}>
                 <BeyondDesign />
 
-                <div className="w-full max-w-[1440px] mx-auto px-6 md:px-16">
+                <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16">
                   <div className="border-t border-white/[0.08]" />
                 </div>
 

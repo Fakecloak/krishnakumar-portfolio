@@ -10,7 +10,7 @@ import { caseStudy1, assets } from '../constants/portfolioData';
 
 export default function CaseStudy1() {
   return (
-    <section id="case-study-pixelwhisk" className="w-full max-w-[1440px] mx-auto pt-0 px-[64px] pb-[64px]">
+    <section id="case-study-pixelwhisk" className="w-full max-w-[1440px] mx-auto pt-0 px-4 sm:px-8 lg:px-[64px] pb-12 lg:pb-[64px]">
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
 
         {/* Left Column: Case Study 01 Info */}
@@ -19,18 +19,18 @@ export default function CaseStudy1() {
             <span>Case Study 01 – PixelWhisk</span>
           </div>
 
-          <h3 className="font-['Darker_Grotesque'] font-semibold text-[48px] leading-[100%] tracking-normal text-white pb-[16px]">
+          <h3 className="font-['Darker_Grotesque'] font-semibold text-[36px] sm:text-[42px] md:text-[48px] leading-[105%] sm:leading-[100%] tracking-normal text-white pb-[16px]">
             From request to delivery
           </h3>
 
-          <p className="font-['Darker_Grotesque'] font-normal text-[24px] leading-[130%] tracking-normal text-white pb-[32px]">
+          <p className="font-['Darker_Grotesque'] font-normal text-[20px] sm:text-[24px] leading-[130%] tracking-normal text-white pb-[24px] sm:pb-[32px]">
             PixelWhisk connects clients and internal teams
             <br />
             throughout the website development process.
           </p>
 
           {/* Tags */}
-          <div className="flex max-w-[90%] flex-wrap items-center gap-2.5 pb-[64px]">
+          <div className="flex max-w-full lg:max-w-[90%] flex-wrap items-center gap-2.5 pb-[32px] sm:pb-[48px] lg:pb-[64px]">
             {caseStudy1.tags.map((tag, idx) => (
               <div
                 key={idx}
@@ -58,7 +58,7 @@ export default function CaseStudy1() {
         </div>
 
         {/* Right Column: Case Study 01 Laptop Display */}
-        <div className="w-full lg:w-1/2 flex items-center justify-end">
+        <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-end">
           <LaptopMockup variant="pixelwhisk" />
         </div>
 

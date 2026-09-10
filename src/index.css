@@ -22,12 +22,15 @@
     background-color: #000000;
     color: #ffffff;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   body {
     background-color: #000000;
     color: #ffffff;
     overflow-x: hidden;
+    width: 100%;
     margin: 0;
     padding: 0;
     font-size: 16px;
@@ -38,6 +41,7 @@
     min-height: 100vh;
     background-color: #000000;
     width: 100%;
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
     border: none;

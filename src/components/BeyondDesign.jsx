@@ -18,8 +18,12 @@ const IllustrationCard = React.memo(function IllustrationCard({ src }) {
         flex
         items-center
         justify-center
-        w-[398px]
-        h-[436px]
+        w-[280px]
+        sm:w-[350px]
+        lg:w-[398px]
+        h-[300px]
+        sm:h-[380px]
+        lg:h-[436px]
         opacity-100
         rotate-0
         bg-white/[0.05]
@@ -33,9 +37,9 @@ const IllustrationCard = React.memo(function IllustrationCard({ src }) {
         src={src}
         alt=""
         className="
-          w-[398px]
-          h-[436px]
-          object-fit
+          w-full
+          h-full
+          object-contain
         "
       />
     </div>
@@ -53,8 +57,12 @@ const MotionCard = React.memo(function MotionCard({ src }) {
         flex
         items-center
         justify-center
-        w-[775px]
-        h-[436px]
+        w-[340px]
+        sm:w-[540px]
+        lg:w-[775px]
+        h-[220px]
+        sm:h-[320px]
+        lg:h-[436px]
         opacity-100
         rotate-0
         bg-white/[0.05]
@@ -72,8 +80,8 @@ const MotionCard = React.memo(function MotionCard({ src }) {
         muted
         playsInline
         className="
-          w-[775px]
-          h-[436px]
+          w-full
+          h-full
           object-contain
         "
       />
@@ -113,27 +121,27 @@ export default function BeyondDesign() {
 
   return (
     <section
-      className="w-full max-w-[1440px] mx-auto px-6 md:px-16"
+      className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16"
       style={{ backgroundColor: '#000000' }}
     >
       {/* ── Header row ── */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6  pb-[84px]">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-[48px] md:pb-[84px]">
 
         {/* Left: eyebrow + title + description */}
         <div className="">
           <p className="text-[20px] font-medium tracking-normal text-white/70 leading-[100%] pb-[8px]">
             Other Creative Work
           </p>
-          <h2 className="text-[56px] font-bold tracking-normal text-white leading-[100%] pb-[16px]">
+          <h2 className="text-[36px] sm:text-[44px] md:text-[56px] font-bold tracking-normal text-white leading-[100%] pb-[16px]">
             Beyond product design
           </h2>
-          <p className="text-[24px] font-['Darker_Grotesque'] leading-[130%] tracking-normal font-medium">
+          <p className="text-[20px] sm:text-[24px] font-['Darker_Grotesque'] leading-[130%] tracking-normal font-medium">
             A collection of illustrations and motion work from my creative practice.
           </p>
         </div>
 
         {/* Right: filter tabs with pipe separators */}
-        <div className="flex items-center text-[24px] font-medium leading-[130%] tracking-normal font-['Darker_Grotesque'] shrink-0 self-end">
+        <div className="flex items-center text-[20px] sm:text-[24px] font-medium leading-[130%] tracking-normal font-['Darker_Grotesque'] shrink-0 self-start md:self-end">
           {beyondDesignFilters.map((filter, i) => (
             <span key={filter} className="flex items-center">
               <button
@@ -159,7 +167,7 @@ export default function BeyondDesign() {
       {/* ── Motion: full-viewport infinite horizontal marquee ── */}
       {activeFilter === 'Motion' && (
         <div
-          className="overflow-hidden"
+          className="overflow-hidden max-w-full"
           style={{ width: '100vw', marginLeft: 'calc(50% - 50vw)' }}
         >
           <div className="marquee-track-motion">
@@ -173,7 +181,7 @@ export default function BeyondDesign() {
       {/* ── Illustrations: infinite horizontal marquee with illustration SVGs ── */}
       {activeFilter === 'Illustrations' && (
         <div
-          className="overflow-hidden"
+          className="overflow-hidden max-w-full"
           style={{ width: '100vw', marginLeft: 'calc(50% - 50vw)' }}
         >
           <div className="marquee-track">

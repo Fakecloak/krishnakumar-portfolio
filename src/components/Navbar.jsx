@@ -18,25 +18,25 @@ export default function Navbar() {
           : ''
       }`}
     >
-      <div className="w-full max-w-[1440px] flex items-center justify-between h-[75px] py-6 px-16">
+      <div className="w-full max-w-[1440px] flex items-center justify-between h-[64px] md:h-[75px] py-4 md:py-6 px-4 sm:px-8 md:px-16">
 
         {/* Brand */}
         <a
           href="#"
           onClick={handleBrandClick}
-          className="flex items-center gap-3 group"
+          className="flex items-center gap-2 sm:gap-3 group shrink-0"
         >
-          <span className="text-white font-medium text-[20px] leading-none tracking-normal font-sans">
+          <span className="text-white font-medium text-[18px] sm:text-[20px] leading-none tracking-normal font-sans whitespace-nowrap">
             Krishnakumar K
           </span>
 
-          <span className="text-zinc-400 group-hover:text-zinc-300 transition-colors font-normal text-[18px] leading-none tracking-normal font-sans">
+          <span className="text-zinc-400 group-hover:text-zinc-300 transition-colors font-normal text-[16px] sm:text-[18px] leading-none tracking-normal font-sans hidden sm:inline whitespace-nowrap">
             Product Designer
           </span>
         </a>
 
         {/* Navigation Links */}
-        <nav className="flex items-center gap-8 md:gap-10">
+        <nav className="flex items-center gap-4 sm:gap-8 md:gap-10 shrink-0">
           {navLinks.map(({ label, href }) => {
             const isActive = active === href;
 
@@ -45,7 +45,7 @@ export default function Navbar() {
                 key={href}
                 href={href}
                 onClick={(e) => handleNavClick(e, href)}
-                className={`font-sans font-medium text-[20px] hover:underline hover:decoration-white/70 hover:decoration-[1.5%] hover:underline-offset-6 leading-none transition-colors ${
+                className={`font-sans font-medium text-[18px] sm:text-[20px] hover:underline hover:decoration-white/70 hover:decoration-[1.5%] hover:underline-offset-6 leading-none transition-colors ${
                   isActive
                     ? 'text-white underline decoration-white/70 decoration-[1.5%] underline-offset-6'
                     : 'text-white/70 hover:text-white no-underline'

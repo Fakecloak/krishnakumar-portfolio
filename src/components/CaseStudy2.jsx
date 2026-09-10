@@ -10,7 +10,7 @@ import { caseStudy2, assets } from '../constants/portfolioData';
 
 export default function CaseStudy2() {
   return (
-    <section id="case-study-lil-big-things" className="w-full max-w-[1440px] mx-auto px-[64px] pt-[64px] pb-[128px]">
+    <section id="case-study-lil-big-things" className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[64px] pt-12 lg:pt-[64px] pb-16 lg:pb-[128px]">
 
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
 
@@ -21,20 +21,20 @@ export default function CaseStudy2() {
             <span>Case Study 02 – Lil Big Things</span>
           </div>
 
-          <h3 className="font-['Darker_Grotesque'] font-semibold text-[48px] leading-[100%] tracking-normal text-white pb-[16px]">
+          <h3 className="font-['Darker_Grotesque'] font-semibold text-[36px] sm:text-[42px] md:text-[48px] leading-[105%] sm:leading-[100%] tracking-normal text-white pb-[16px]">
             From scattered tasks to clear
             <br />
             progress
           </h3>
 
-          <p className="font-['Darker_Grotesque'] font-normal text-[24px] leading-[130%] tracking-normal text-white  pb-[32px]">
+          <p className="font-['Darker_Grotesque'] font-normal text-[20px] sm:text-[24px] leading-[130%] tracking-normal text-white  pb-[24px] sm:pb-[32px]">
             A work management platform that helps teams organize tasks, track
             <br className="hidden md:inline" />
             ownership, and keep customers informed throughout the workflow.
           </p>
 
           {/* Tags */}
-          <div className="flex max-w-[90%] flex-wrap items-center gap-2.5 pb-[64px]">
+          <div className="flex max-w-full lg:max-w-[90%] flex-wrap items-center gap-2.5 pb-[32px] sm:pb-[48px] lg:pb-[64px]">
             {caseStudy2.tags.map((tag, idx) => (
               <div
                 key={idx}
@@ -62,7 +62,7 @@ export default function CaseStudy2() {
         </div>
 
         {/* Right Column: Case Study 02 Laptop Display */}
-        <div className="w-full lg:w-1/2 flex items-center justify-end">
+        <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-end">
           <LaptopMockup variant="lilbigthings" />
         </div>
 

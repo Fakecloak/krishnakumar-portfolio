@@ -5,7 +5,7 @@ export default function PortraitMockup({
   alt = "Krishnakumar K - Product Designer"
 }) {
   return (
-    <div className="relative box-border w-[399px] h-[437px] rounded-[6px] border-[0.5px] border-white/50 overflow-hidden shadow-2xl group flex items-end justify-center">
+    <div className="relative box-border w-full max-w-[399px] aspect-[399/437] h-auto rounded-[6px] border-[0.5px] border-white/50 overflow-hidden shadow-2xl group flex items-end justify-center">
 
       {/* Subtle Inner Glow */}
       <div

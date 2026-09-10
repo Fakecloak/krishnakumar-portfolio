@@ -11,7 +11,7 @@ export default function LaptopMockup({
   const altText = alt || defaultAlt;
 
   return (
-    <div className="w-[649px] h-[436px] overflow-hidden rounded-[6px] border-white/50 border-[0.80px] ">
+    <div className="w-full max-w-[649px] aspect-[649/436] h-auto overflow-hidden rounded-[6px] border-white/50 border-[0.80px]">
       <img
         src={src}
         alt={altText}

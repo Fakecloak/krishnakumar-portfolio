@@ -12,19 +12,19 @@ export default function CTASection() {
   return (
     <section
       id="contact"
-      className="relative w-full overflow-hidden pb-[128px] pt-0 scroll-mt-[75px]"
+      className="relative w-full overflow-hidden pb-[64px] md:pb-[128px] pt-0 scroll-mt-[75px]"
     >
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-16">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pt-4">
           {/* Left Column: Heading + Email */}
           <div className="">
             <div className="text-[18px] font-medium tracking-normal leading-[100%] text-white/70 pb-[8px] ">
               Contact
             </div>
-            <h2 className="font-['Darker_Grotesque'] text-[64px] font-bold tracking-normal leading-[100%] text-white pb-[12px]">
+            <h2 className="font-['Darker_Grotesque'] text-[40px] sm:text-[52px] md:text-[64px] font-bold tracking-normal leading-[100%] text-white pb-[12px]">
               Let's Create Together
             </h2>
-            <p className="text-[24px] tracking-normal leading-[130%] font-medium underline decoration-white/70 underline-offset-[25%] decoration-[1.5%] text-white/70"
+            <p className="text-[20px] sm:text-[24px] tracking-normal leading-[130%] font-medium underline decoration-white/70 underline-offset-[25%] decoration-[1.5%] text-white/70 break-all sm:break-normal"
                   style={{ textDecorationSkipInk: 'auto' }}>
               <a
                 href="mailto:krishnakumar.191104@gmail.com"
@@ -36,11 +36,11 @@ export default function CTASection() {
           </div>
 
           {/* Right Column: CTA Buttons */}
-          <div className="flex items-center gap-6 flex-wrap">
+          <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
             <a
               href="/resume/Krishnakumar_Resume.pdf"
               download
-              className="inline-flex items-center justify-center h-[64px] gap-3 px-6 rounded-[45px] border border-white text-[24px] leading-[120%] tracking-normal font-medium text-white hover:bg-white/10 transition-all group"
+              className="inline-flex items-center justify-center h-[56px] sm:h-[64px] gap-3 px-5 sm:px-6 rounded-[45px] border border-white text-[20px] sm:text-[24px] leading-[120%] tracking-normal font-medium text-white hover:bg-white/10 transition-all group"
             >
               <span >Download Resume</span>
               <span className="text-[24px] leading-none w-[14px] transition-transform group-hover:translate-y-1">
@@ -52,9 +52,9 @@ export default function CTASection() {
               href="https://www.linkedin.com/in/krishnakumar19/"
               target="_blank" 
               rel="noreferrer"
-              className="inline-flex items-center justify-center  h-[62px] gap-3 p-6 rounded-[45px] bg-white text-black hover:bg-[#999999] transition-all text-[24px] font-medium shadow-lg group shadow-white/5"
+              className="inline-flex items-center justify-center h-[54px] sm:h-[62px] gap-3 px-5 sm:p-6 rounded-[45px] bg-white text-black hover:bg-[#999999] transition-all text-[20px] sm:text-[24px] font-medium shadow-lg group shadow-white/5"
             >
-              <span className='text-[24px] font-["Darker_Grotesque"] font-medium tracking-normal text=[#1B1B1B] '>LinkedIn</span>
+              <span className='text-[20px] sm:text-[24px] font-["Darker_Grotesque"] font-medium tracking-normal text=[#1B1B1B] '>LinkedIn</span>
               <span className="transition-transform group-hover:translate-x-1 hover:-translate-y-1 ">
                 <img src={assets.sideArrow} alt="sidearrow" />
               </span>
