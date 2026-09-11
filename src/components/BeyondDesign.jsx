@@ -167,7 +167,7 @@ export default function BeyondDesign() {
       {/* ── Motion: full-viewport infinite horizontal marquee ── */}
       {activeFilter === 'Motion' && (
         <div
-          className="overflow-hidden max-w-full"
+          className="overflow-hidden"
           style={{ width: '100vw', marginLeft: 'calc(50% - 50vw)' }}
         >
           <div className="marquee-track-motion">
@@ -181,7 +181,7 @@ export default function BeyondDesign() {
       {/* ── Illustrations: infinite horizontal marquee with illustration SVGs ── */}
       {activeFilter === 'Illustrations' && (
         <div
-          className="overflow-hidden max-w-full"
+          className="overflow-hidden"
           style={{ width: '100vw', marginLeft: 'calc(50% - 50vw)' }}
         >
           <div className="marquee-track">
