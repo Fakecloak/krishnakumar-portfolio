@@ -427,7 +427,7 @@ function CaseStudyNavigation({ data }) {
 // ─── Root export ──────────────────────────────────────────────────────────────
 export default function CaseStudyPage({ data }) {
   return (
-    <div className="relative w-full pb-16 lg:pb-32 overflow-hidden">
+    <div className="relative w-full pb-16 lg:pb-32">
       {/* Two-column layout on lg, stacked on <lg */}
       <div className="w-full max-w-[1440px] mx-auto flex flex-col lg:flex-row items-start">
         <Sidebar data={data} />

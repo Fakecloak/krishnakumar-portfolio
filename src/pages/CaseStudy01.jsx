@@ -171,7 +171,7 @@ const caseStudy01 = {
 
 export default function CaseStudy01() {
   return (
-    <div className="relative w-full overflow-hidden" style={{ isolation: 'isolate' }}>
+    <div className="relative w-full" style={{ isolation: 'isolate' }}>
       {/* Static background — fixed to viewport, matches About section bg */}
       <div
         aria-hidden="true"

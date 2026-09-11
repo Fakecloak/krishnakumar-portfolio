@@ -22,8 +22,6 @@
     background-color: #000000;
     color: #ffffff;
     scroll-behavior: smooth;
-    overflow-x: hidden;
-    width: 100%;
   }
 
   body {
@@ -41,10 +39,10 @@
     min-height: 100vh;
     background-color: #000000;
     width: 100%;
-    overflow-x: hidden;
     margin: 0;
     padding: 0;
     border: none;
+    outline: none;
     display: block;
     text-align: left;
   }
